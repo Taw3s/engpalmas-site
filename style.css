@@ -1,1 +1,1646 @@
-html{scroll-behavior:smooth}:root{--orange-brand:#FF5700;--orange-hover:#CC4600;--black-bg:#0a0a0a;--dark-grey:#1a1a1a;--white-text:#ffffff;--light-grey:#cccccc}*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif}body{background-color:var(--black-bg);color:var(--white-text);line-height:1.6;overflow-x:hidden}header{background-color:rgba(10,10,10,0.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:20px 5%;display:flex;justify-content:space-between;align-items:center;position:fixed;width:100%;top:0;z-index:1000;border-bottom:2px solid var(--orange-brand);box-shadow:0 4px 30px rgba(0,0,0,0.5)}.logo{display:flex!important;align-items:center;gap:3px;text-decoration:none}.logo-icone{height:60px!important;width:auto;object-fit:contain}.logo-texto{font-weight:900;font-size:24px;color:var(--white-text);letter-spacing:1px}.logo-texto span{color:var(--orange-brand)}nav ul{list-style:none;display:flex;gap:30px}nav ul li a{color:var(--white-text);text-decoration:none;font-weight:700;text-transform:uppercase;font-size:14px;letter-spacing:1px;transition:0.3s}nav ul li a:hover{color:var(--orange-brand)}footer{padding:60px 5%;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px;background-color:var(--black-bg);border-top:2px solid var(--orange-brand);position:relative;z-index:2}.footer-col h4{color:var(--orange-brand);margin-bottom:20px;text-transform:uppercase;letter-spacing:1px}.footer-col p{color:var(--light-grey);font-size:0.9rem;margin-bottom:10px}.bg-pattern{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;background:url('prediosFODAS.png') center/cover no-repeat;opacity:0.35;filter:blur(3px)}.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}.hero h1{font-size:3.5rem;font-weight:900;text-transform:uppercase;text-shadow:3px 5px 20px rgba(0,0,0,0.9);letter-spacing:2px}.hero h1 span{color:var(--orange-brand);font-size:4rem;display:block}.hero .btn{margin-top:50px}.btn{display:inline-block;background-color:var(--orange-brand);color:#fff;padding:15px 35px;text-decoration:none;font-weight:700;text-transform:uppercase;letter-spacing:1px;clip-path:polygon(10% 0,100% 0,90% 100%,0% 100%);transition:all 0.3s ease}.btn:hover{background-color:var(--orange-hover);transform:scale(1.05);box-shadow:0 10px 20px rgba(255,87,0,0.4)}.secao-preta-container{background-color:#000;position:relative;overflow:hidden;border-top:5px solid var(--orange-brand)}.secao-preta-container::after{content:'';position:absolute;top:50%;right:-400px;transform:translateY(-50%);width:3000px;height:1100px;background:url('logoENG.png') no-repeat center right/contain;opacity:0.07;z-index:1;pointer-events:none}.portfolio-grid{display:grid!important;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;padding:20px 0}.portfolio-grid a{color:var(--white-text);text-decoration:none}.portfolio-grid a:visited{color:var(--white-text)}.portfolio-grid a:hover{color:var(--orange-brand)}.portfolio-item{height:300px;position:relative;overflow:hidden;border-left:5px solid var(--orange-brand);transition:transform 0.3s;border-radius:0 8px 8px 0}.portfolio-item:hover{transform:translateY(-10px);box-shadow:0 15px 30px rgba(0,0,0,0.8)}.obra-img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease}.portfolio-item:hover .obra-img{transform:scale(1.1)}.obra-info{position:absolute;bottom:0;width:100%;padding:20px;background:linear-gradient(to top,rgba(0,0,0,0.95) 0%,transparent 100%);z-index:2}.pagina-detalhes{background-color:#000}.layout-split-obra{display:flex;min-height:100vh;padding-top:100px;align-items:stretch}.layout-split-obra.inverso{flex-direction:row-reverse}.bloco-texto-obra{width:45%;background-color:#1a1a1a;padding:60px 5% 60px 8%;position:relative;display:flex;flex-direction:column;justify-content:center;box-shadow:15px 0 50px rgba(0,0,0,0.8);z-index:5}.layout-split-obra.inverso .bloco-texto-obra{padding:60px 8% 60px 5%;box-shadow:-15px 0 50px rgba(0,0,0,0.8)}.fita-laranja{position:absolute;top:0;left:0;width:100%;height:8px;background-color:var(--orange-brand)}.titulo-destaque{font-size:3rem;font-weight:900;text-transform:uppercase;line-height:1.1;margin-bottom:20px;color:#fff;letter-spacing:1px}.titulo-destaque span{color:var(--orange-brand)}.caixa-tecnica{background:rgba(0,0,0,0.4);padding:25px;border-left:4px solid var(--orange-brand);margin-top:20px;border-radius:0 6px 6px 0}.bloco-imagem-obra{width:55%;display:flex;align-items:center;justify-content:center}.predio-3d{width:135%;height:auto;filter:drop-shadow(-20px 20px 30px rgba(0,0,0,0.9));margin-left:-5%;transition:0.5s ease}.layout-split-obra.inverso .predio-3d{margin-left:0;margin-right:-15%}.btn-voltar-detalhe{display:inline-flex;align-items:center;gap:10px;color:var(--light-grey);text-decoration:none;font-size:0.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:25px;transition:all 0.3s ease;border:1px solid rgba(255,255,255,0.1);padding:8px 15px;border-radius:4px;width:fit-content}.btn-voltar-detalhe:hover{color:var(--orange-brand);border-color:var(--orange-brand);background-color:rgba(255,87,0,0.05)}.btn-voltar-detalhe:hover .seta{transform:translate3d(-5px,-2px,0)}.seta{transition:transform 0.3s ease;font-size:1.2rem;line-height:0;transform:translateY(-2px);display:inline-block}.secao-especialidades{padding:80px 5%;background-color:transparent;text-align:center}.secao-especialidades .section-title{margin-bottom:30px}.especialidades-conteudo{max-width:900px;margin:0 auto}.especialidades-conteudo p{font-size:1.15rem;color:var(--light-grey);margin-bottom:50px;line-height:1.8}.especialidades-conteudo strong{color:var(--white-text);font-weight:900}.lista-especialidades{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:0}.lista-especialidades li{background-color:#111;padding:25px 20px;border-radius:6px;font-weight:700;font-size:0.95rem;color:var(--white-text);border-bottom:3px solid var(--orange-brand);border-top:1px solid #222;border-left:1px solid #222;border-right:1px solid #222;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;align-items:center;justify-content:center;text-align:center}.lista-especialidades li:hover{transform:translateY(-8px);background-color:#1a1a1a;box-shadow:0 10px 20px rgba(255,87,0,0.1)}.check-laranja{color:var(--orange-brand);font-weight:900;font-size:1.2rem;margin-right:10px}@keyframes fadeInUp{from{opacity:0;transform:translate3d(0,60px,0)}to{opacity:1;transform:translate3d(0,0,0)}}.anime-inicio{animation:fadeInUp 1s cubic-bezier(0.25,0.46,0.45,0.94) both}.delay-1{animation-delay:0.2s}.delay-2{animation-delay:0.5s}.scroll-hidden{opacity:0;transform:translate3d(0,80px,0);transition:opacity 1s ease-out,transform 1s cubic-bezier(0.25,0.46,0.45,0.94)}.scroll-hidden.aparecer{opacity:1;transform:translate3d(0,0,0)}.divisor-fita-container{display:flex;align-items:center;justify-content:center;margin:80px 5% 60px 5%}.fita-linha{height:4px;background-color:var(--orange-brand);flex-grow:1;border-radius:2px;opacity:0.8}.divisor-logo-center{height:50px;width:auto;margin:0 30px;filter:drop-shadow(0 0 10px rgba(0,0,0,0.5));transition:transform 0.3s ease}.divisor-fita-container:hover .divisor-logo-center{transform:scale(1.1)}::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background-color:var(--black-bg)}::-webkit-scrollbar-thumb{background-color:var(--orange-brand);border-radius:10px;border:2px solid var(--black-bg)}::-webkit-scrollbar-thumb:hover{background-color:var(--orange-hover)}.whatsapp-float{position:fixed;width:60px;height:60px;bottom:40px;right:40px;background-color:var(--orange-brand);border-radius:50px;box-shadow:2px 2px 15px rgba(0,0,0,0.5);z-index:2000;display:flex;align-items:center;justify-content:center;transition:transform 0.3s ease;animation:pulse-wa 2s infinite}.whatsapp-float:hover{transform:scale(1.1)}.wa-icone .whatsapp-float svg,.whatsapp-float img{width:35px!important;height:35px!important;object-fit:contain}@keyframes pulse-wa{0%{box-shadow:0 0 0 0 rgba(255,87,0,0.7)}70%{box-shadow:0 0 0 15px rgba(255,87,0,0)}100%{box-shadow:0 0 0 0 rgba(255,87,0,0)}}.container-mapa{margin-top:30px;border-radius:12px;overflow:hidden;border:none;box-shadow:0 0 0 1px rgba(255,87,0,0.2),0 10px 40px -10px rgba(255,87,0,0.3);transition:transform 0.3s ease}.container-mapa iframe{filter:invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);transition:0.5s ease}.container-mapa:hover{transform:translateY(-5px);box-shadow:0 0 0 1px var(--orange-brand),0 20px 50px -10px rgba(255,87,0,0.5)}.container-mapa:hover iframe{filter:invert(100%) hue-rotate(180deg) brightness(110%) contrast(100%)}@media (max-width:992px){.layout-split-obra,.layout-split-obra.inverso{flex-direction:column;padding-top:80px}.bloco-texto-obra,.bloco-imagem-obra{width:100%}.bloco-texto-obra{padding:40px 5%;order:2}.bloco-imagem-obra{height:350px;order:1}.predio-3d,.layout-split-obra.inverso .predio-3d{margin:0;width:100%}}@media (max-width:768px){.hero h1{font-size:2.5rem}.hero h1 span{font-size:3rem}nav ul{display:none}.whatsapp-float{width:50px;height:50px;bottom:20px;right:20px}.wa-icone{width:28px;height:28px}}.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,0.85);z-index:2000;justify-content:center;align-items:center}.modal-content{background-color:var(--dark-grey);padding:40px;border-radius:8px;width:90%;max-width:500px;position:relative;border-top:4px solid var(--orange-brand);box-shadow:0 15px 50px rgba(0,0,0,0.5);animation:abrirModal 0.3s ease-out}@keyframes abrirModal{from{transform:translateY(-50px);opacity:0}to{transform:translateY(0);opacity:1}}.fechar-modal{position:absolute;top:15px;right:20px;font-size:28px;color:var(--light-grey);cursor:pointer;transition:0.3s}.fechar-modal:hover{color:var(--orange-brand)}.form-contato{display:flex;flex-direction:column;gap:15px}.form-contato input,.form-contato textarea{padding:15px;background-color:#111;border:1px solid #333;color:var(--white-text);border-radius:4px;font-size:1rem}.form-contato input:focus,.form-contato textarea:focus{outline:none;border-color:var(--orange-brand)}.btn-enviar{width:100%;text-align:center;margin-top:10px}
+/* ==========================================================================
+   ENGPALMAS — FOLHA DE ESTILO PRINCIPAL
+   --------------------------------------------------------------------------
+   Sumário:
+     01. Variáveis e reset
+     02. Base e tipografia
+     03. Acessibilidade e marcadores de pendência
+     04. Cabeçalho e navegação (+ menu hambúrguer)
+     05. Botões
+     06. Hero
+     07. Fundo decorativo
+     08. Blocos escuros e divisor de fita
+     09. A Empresa (ficha institucional)
+     10. Obras (grade e cards)
+     11. Especialidades
+     12. Capacidade técnica
+     13. Localização e mapa
+     14. Rodapé
+     15. Páginas de detalhe de obra (+ ficha técnica)
+     16. Modal de contato
+     17. Botão flutuante do WhatsApp
+     18. Animações
+     19. Barra de rolagem
+     20. Preferência por movimento reduzido
+   ========================================================================== */
+
+
+/* ==========================================================================
+   01. VARIÁVEIS E RESET
+   ========================================================================== */
+
+:root {
+    /* Laranja da marca — usado em títulos, bordas, checks e detalhes.
+       Contraste sobre o preto de fundo: 6,2:1 (AA aprovado). */
+    --orange-brand: #FF5700;
+
+    /* Laranja escurecido, exclusivo para FUNDO DE BOTÃO com texto branco.
+       #FF5700 com texto branco dá apenas 3,2:1 e reprova em AA.
+       #C43F00 com texto branco dá 5,2:1 (AA aprovado, com folga). */
+    --orange-btn: #C43F00;
+    --orange-btn-hover: #9E3300;   /* 7,2:1 com texto branco */
+
+    /* Mantido para hover de elementos que não são botão de texto */
+    --orange-hover: #CC4600;
+
+    --black-bg: #0a0a0a;
+    --dark-grey: #1a1a1a;
+    --white-text: #ffffff;
+    --light-grey: #cccccc;         /* 12,3:1 sobre o preto de fundo */
+
+    /* Compensação do cabeçalho fixo, usada pelas âncoras */
+    --altura-header: 102px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+/* ==========================================================================
+   02. BASE E TIPOGRAFIA
+   ========================================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--black-bg);
+    color: var(--white-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Corrige âncoras que ficavam escondidas atrás do cabeçalho fixo. */
+[id] {
+    scroll-margin-top: var(--altura-header);
+}
+
+/* Título de seção — a classe era usada no HTML mas não existia no CSS,
+   e por isso os títulos caíam no padrão do navegador. */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.15;
+    color: var(--white-text);
+    margin-bottom: 30px;
+}
+
+.section-title span {
+    color: var(--orange-brand);
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.9rem;
+    }
+}
+
+
+/* ==========================================================================
+   03. ACESSIBILIDADE E MARCADORES DE PENDÊNCIA
+   ========================================================================== */
+
+/* Marcador de dado ainda não fornecido. Deliberadamente berrante:
+   é para ser impossível publicar o site sem notar.
+   Todos estão listados no arquivo PENDENCIAS.md. */
+.pendente {
+    display: inline-block;
+    background-color: #3a1a00;
+    color: #FFB27A;
+    border: 1px dashed var(--orange-brand);
+    border-radius: 3px;
+    padding: 1px 8px;
+    font-size: 0.85em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    /* Precisa quebrar linha: as chaves longas (crea-responsavel-tecnico,
+       orgao-contratante-natividade) estouravam a coluna do grid. */
+    white-space: normal;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+}
+
+/* Anel de foco visível e consistente para navegação por teclado. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--orange-brand);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* --- Ícones SVG -----------------------------------------------------------
+   Substituem os emojis (📞 📱 ✉️ 📍), que variavam de desenho conforme o
+   sistema operacional e não seguiam a cor da marca. Todos são inline,
+   monocromáticos e herdam currentColor. */
+
+.sprite-icones {
+    display: none;
+}
+
+.icone {
+    width: 1.05em;
+    height: 1.05em;
+    flex-shrink: 0;
+    vertical-align: -0.16em;
+    margin-right: 6px;
+    color: var(--orange-brand);
+}
+
+/* Conteúdo somente para leitores de tela. */
+.apenas-leitor {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Link de pular para o conteúdo — aparece ao receber foco. */
+.pular-conteudo {
+    position: absolute;
+    top: -100px;
+    left: 12px;
+    z-index: 3000;
+    background-color: var(--orange-btn);
+    color: #fff;
+    padding: 12px 20px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: top 0.2s ease;
+}
+
+.pular-conteudo:focus {
+    top: 12px;
+}
+
+/* Trava a rolagem do fundo enquanto o modal está aberto. */
+body.modal-aberto {
+    overflow: hidden;
+}
+
+
+/* ==========================================================================
+   04. CABEÇALHO E NAVEGAÇÃO
+   ========================================================================== */
+
+header {
+    background-color: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--orange-brand);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    display: flex !important;
+    align-items: center;
+    gap: 3px;
+    text-decoration: none;
+}
+
+.logo-icone {
+    height: 60px !important;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-texto {
+    font-weight: 900;
+    font-size: 24px;
+    color: var(--white-text);
+    letter-spacing: 1px;
+}
+
+.logo-texto span {
+    color: var(--orange-brand);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a {
+    color: var(--white-text);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--orange-brand);
+}
+
+/* Marca o item da seção que está na tela. */
+nav ul li a[aria-current="page"] {
+    color: var(--orange-brand);
+}
+
+/* --- Botão hambúrguer -----------------------------------------------------
+   Só existe quando o JavaScript está ativo (classe .js na tag <html>).
+   Sem JS, o menu permanece visível e utilizável — nunca some. */
+
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: 2px solid var(--orange-brand);
+    border-radius: 4px;
+    width: 46px;
+    height: 42px;
+    cursor: pointer;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-toggle .barra {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--white-text);
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .barra:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .barra:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .barra:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+    html.js .nav-toggle {
+        display: flex;
+    }
+
+    html.js nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background-color: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 2px solid var(--orange-brand);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        padding: 10px 0;
+    }
+
+    html.js nav ul.aberto {
+        display: flex;
+    }
+
+    html.js nav ul li a {
+        display: block;
+        padding: 16px 8%;
+        font-size: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Sem JS: o menu vira uma linha simples, mas continua acessível. */
+    nav ul {
+        gap: 18px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+}
+
+
+/* ==========================================================================
+   05. BOTÕES
+   ========================================================================== */
+
+.btn {
+    display: inline-block;
+    background-color: var(--orange-btn);
+    color: #fff;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    /* Corte enviesado característico da marca. */
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--orange-btn-hover);
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 87, 0, 0.4);
+}
+
+/* O clip-path corta o anel de foco; o contorno interno garante visibilidade. */
+.btn:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: -6px;
+}
+
+/* Botão secundário: mesmo recorte enviesado, sem preenchimento. */
+.btn-secundario {
+    background-color: transparent;
+    color: var(--white-text);
+    box-shadow: inset 0 0 0 2px var(--orange-brand);
+}
+
+.btn-secundario:hover {
+    background-color: rgba(255, 87, 0, 0.12);
+    box-shadow: inset 0 0 0 2px var(--orange-brand);
+}
+
+.hero-acoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.hero-acoes .btn {
+    margin-top: 0;
+}
+
+
+/* ==========================================================================
+   06. HERO
+   ========================================================================== */
+
+.hero {
+    /* 100dvh evita o corte causado pela barra de endereço no celular. */
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 5% 60px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 3px 5px 20px rgba(0, 0, 0, 0.9);
+    letter-spacing: 2px;
+}
+
+.hero h1 span {
+    color: var(--orange-brand);
+    font-size: 4rem;
+    display: block;
+}
+
+.hero p {
+    max-width: 760px;
+    margin-top: 25px;
+    font-size: 1.15rem;
+    color: var(--white-text);
+    /* Sombra garante legibilidade sobre a imagem de fundo. */
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.95);
+}
+
+.hero .btn {
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero h1 span {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+
+/* ==========================================================================
+   07. FUNDO DECORATIVO
+   ========================================================================== */
+
+.bg-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background: url('prediosFODAS.png') center/cover no-repeat;
+    opacity: 0.35;
+    filter: blur(3px);
+}
+
+/* No celular a imagem fixa com blur custa caro em repaint e bateria.
+   Abaixo de 768px ela sai e entra um gradiente sólido. */
+@media (max-width: 768px) {
+    .bg-pattern {
+        background-image: none;
+        background: linear-gradient(160deg, #141414 0%, var(--black-bg) 55%, #000 100%);
+        opacity: 1;
+        filter: none;
+    }
+}
+
+
+/* ==========================================================================
+   08. BLOCOS ESCUROS E DIVISOR DE FITA
+   ========================================================================== */
+
+.secao-preta-container {
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    border-top: 5px solid var(--orange-brand);
+}
+
+/* Marca d'água da logo ao fundo do bloco.
+   Antes: caixa de 3000x1100 deslocada 400px para fora da tela, o que
+   cortava a logo pela metade e a fazia parecer mancha. Agora fica
+   inteiramente dentro do enquadramento e com opacidade menor. */
+.secao-preta-container::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 4%;
+    transform: translateY(-50%);
+    /* Acompanha a largura da tela para nunca ser cortada no celular. */
+    width: min(520px, 55vw);
+    height: min(520px, 55vw);
+    background: url('logoENG.png') no-repeat center/contain;
+    opacity: 0.05;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Garante que o conteúdo fique acima da marca d'água. */
+.secao-preta-container > section,
+.secao-preta-container > .divisor-fita-container {
+    position: relative;
+    z-index: 2;
+}
+
+.divisor-fita-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 80px 5% 60px 5%;
+}
+
+.fita-linha {
+    height: 4px;
+    background-color: var(--orange-brand);
+    flex-grow: 1;
+    border-radius: 2px;
+    opacity: 0.8;
+}
+
+.divisor-logo-center {
+    height: 50px;
+    width: auto;
+    margin: 0 30px;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.divisor-fita-container:hover .divisor-logo-center {
+    transform: scale(1.1);
+}
+
+
+/* ==========================================================================
+   09. A EMPRESA (FICHA INSTITUCIONAL)
+   ========================================================================== */
+
+.secao-empresa {
+    padding: 80px 5% 40px;
+    text-align: center;
+}
+
+.empresa-texto {
+    max-width: 900px;
+    margin: 0 auto 45px;
+    font-size: 1.15rem;
+    color: var(--light-grey);
+    line-height: 1.8;
+}
+
+.empresa-texto strong {
+    color: var(--white-text);
+    font-weight: 900;
+}
+
+/* Dados cadastrais em pares rótulo/valor. É o bloco que uma comissão
+   de licitação procura primeiro. */
+.ficha-empresa {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px;
+    background-color: #222;
+    border: 1px solid #222;
+    border-radius: 6px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.ficha-empresa div {
+    background-color: #111;
+    padding: 22px 24px;
+    /* Sem isto, o item do grid nunca encolhe abaixo do próprio conteúdo
+       e valores longos vazam para fora da caixa. */
+    min-width: 0;
+}
+
+.ficha-empresa dt {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--orange-brand);
+    margin-bottom: 8px;
+}
+
+.ficha-empresa dt,
+.ficha-empresa dd {
+    overflow-wrap: anywhere;
+}
+
+.ficha-empresa dd {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white-text);
+    margin: 0;
+    line-height: 1.5;
+}
+
+
+/* ==========================================================================
+   10. OBRAS (GRADE E CARDS)
+   ========================================================================== */
+
+/* A seção não tinha recuo lateral e os cards encostavam na borda da tela. */
+.secao-obras {
+    padding: 80px 5% 20px;
+    text-align: center;
+}
+
+.portfolio-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 20px 0;
+}
+
+.portfolio-grid a {
+    color: var(--white-text);
+    text-decoration: none;
+}
+
+.portfolio-grid a:visited {
+    color: var(--white-text);
+}
+
+.portfolio-grid a:hover {
+    color: var(--orange-brand);
+}
+
+.portfolio-item {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border-left: 5px solid var(--orange-brand);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 0 8px 8px 0;
+    background-color: #111;
+}
+
+.link-obra:hover .portfolio-item,
+.link-obra:focus-visible .portfolio-item {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+}
+
+.obra-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.link-obra:hover .obra-img,
+.link-obra:focus-visible .obra-img {
+    transform: scale(1.1);
+}
+
+.obra-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, transparent 100%);
+    z-index: 2;
+    text-align: left;
+}
+
+.obra-info h3 {
+    font-size: 1.25rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.obra-info .obra-local {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--light-grey);
+    margin-top: 2px;
+}
+
+.obra-info .obra-ver {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--orange-brand);
+}
+
+/* Selo de situação da obra, no canto superior do card.
+   Padrão: CONCLUÍDA = laranja preenchido; EM ANDAMENTO = contorno laranja.
+   O preenchido usa --orange-btn porque texto branco sobre o #FF5700 puro
+   dá 3,2:1 e reprova em AA; sobre #C43F00 dá 5,2:1. */
+.selo-situacao {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 3;
+    background-color: var(--orange-btn);
+    border: 1px solid var(--orange-btn);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 12px;
+    border-radius: 3px;
+}
+
+.selo-situacao.andamento {
+    background-color: rgba(0, 0, 0, 0.85);
+    border-color: var(--orange-brand);
+    color: var(--orange-brand);
+}
+
+/* Situação ainda não informada: mantém o card padronizado sem afirmar
+   um status. Segue a linguagem tracejada dos demais marcadores. */
+.selo-situacao.selo-pendente {
+    background-color: #3a1a00;
+    border: 1px dashed var(--orange-brand);
+    color: #FFB27A;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    max-width: calc(100% - 28px);
+    overflow-wrap: anywhere;
+}
+
+/* Placeholder para obras que ainda não têm foto disponível. */
+.obra-sem-foto {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background: repeating-linear-gradient(
+        135deg,
+        #141414,
+        #141414 14px,
+        #191919 14px,
+        #191919 28px
+    );
+}
+
+.obra-sem-foto img {
+    height: 64px;
+    width: 64px;
+    object-fit: contain;
+    opacity: 0.5;
+}
+
+.obra-sem-foto span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--light-grey);
+}
+
+
+/* ==========================================================================
+   11. ESPECIALIDADES
+   ========================================================================== */
+
+.secao-especialidades {
+    padding: 80px 5%;
+    background-color: transparent;
+    text-align: center;
+}
+
+.especialidades-conteudo {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.especialidades-conteudo p {
+    font-size: 1.15rem;
+    color: var(--light-grey);
+    margin-bottom: 50px;
+    line-height: 1.8;
+}
+
+.especialidades-conteudo strong {
+    color: var(--white-text);
+    font-weight: 900;
+}
+
+.lista-especialidades {
+    list-style: none;
+    display: grid;
+    /* 200px permite as 4 colunas caberem nos 900px do container: antes,
+       com 220px, a quarta quebrava para uma segunda linha (layout 3+1). */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* Iguala a altura de TODAS as linhas, não só das células de uma
+       mesma linha — os cards ficam idênticos mesmo quando o grid quebra. */
+    grid-auto-rows: 1fr;
+    gap: 20px;
+    padding: 0;
+}
+
+.lista-especialidades li {
+    background-color: #111;
+    padding: 25px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--white-text);
+    border-bottom: 3px solid var(--orange-brand);
+    border-top: 1px solid #222;
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    /* Alinhado à esquerda: com o conteúdo centralizado, cada ✓ começava
+       num ponto diferente conforme o comprimento do texto. */
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    gap: 12px;
+    min-height: 92px;
+}
+
+.lista-especialidades li:hover {
+    transform: translateY(-8px);
+    background-color: #1a1a1a;
+    box-shadow: 0 10px 20px rgba(255, 87, 0, 0.1);
+}
+
+.check-laranja {
+    color: var(--orange-brand);
+    font-weight: 900;
+    font-size: 1.2rem;
+    /* Largura fixa e sem encolher: mantém todos os checks na mesma
+       posição horizontal, independente do texto ao lado. */
+    flex-shrink: 0;
+    width: 1em;
+    text-align: center;
+    line-height: 1;
+}
+
+
+/* ==========================================================================
+   12. CAPACIDADE TÉCNICA
+   ========================================================================== */
+
+.secao-capacidade {
+    padding: 40px 5% 80px;
+    text-align: center;
+}
+
+.grid-capacidade {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card-capacidade {
+    background-color: #111;
+    /* Só a borda esquerda, como em .portfolio-item e .caixa-tecnica.
+       A borda de 1px em volta criava um corte diagonal (miter) no encontro
+       com os 5px laranja, e o vão aparecia como se a barra estivesse solta
+       do card. O contorno sutil agora vem de um box-shadow, que não faz
+       junção de canto com a borda. */
+    border: none;
+    border-left: 5px solid var(--orange-brand);
+    box-shadow: inset -1px 0 0 #222, inset 0 1px 0 #222, inset 0 -1px 0 #222;
+    border-radius: 0 6px 6px 0;
+    padding: 32px 22px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-capacidade:hover {
+    transform: translateY(-8px);
+    /* Repete os insets: uma nova declaração de box-shadow substitui a
+       anterior por inteiro e o contorno sumiria no hover. */
+    box-shadow: inset -1px 0 0 #222, inset 0 1px 0 #222, inset 0 -1px 0 #222,
+                0 10px 20px rgba(255, 87, 0, 0.1);
+}
+
+.card-capacidade .numero {
+    display: block;
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--orange-brand);
+    margin-bottom: 12px;
+}
+
+/* Enquanto o dado não chega, o marcador entra no lugar do número
+   e precisa caber na caixa. */
+.card-capacidade .numero .pendente {
+    font-size: 0.85rem;
+}
+
+.card-capacidade .rotulo {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--light-grey);
+    line-height: 1.5;
+}
+
+.nota-capacidade {
+    max-width: 900px;
+    margin: 35px auto 0;
+    font-size: 0.88rem;
+    color: var(--light-grey);
+    line-height: 1.7;
+}
+
+
+/* ==========================================================================
+   13. LOCALIZAÇÃO E MAPA
+   ========================================================================== */
+
+.secao-localizacao {
+    padding: 40px 5% 80px;
+}
+
+.container-mapa {
+    margin-top: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 0 0 1px rgba(255, 87, 0, 0.2), 0 10px 40px -10px rgba(255, 87, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container-mapa iframe {
+    display: block;
+    filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+    transition: filter 0.5s ease;
+}
+
+.container-mapa:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 0 1px var(--orange-brand), 0 20px 50px -10px rgba(255, 87, 0, 0.5);
+}
+
+.container-mapa:hover iframe {
+    filter: invert(100%) hue-rotate(180deg) brightness(110%) contrast(100%);
+}
+
+.caixa-tecnica {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 25px;
+    border-left: 4px solid var(--orange-brand);
+    margin-top: 20px;
+    border-radius: 0 6px 6px 0;
+}
+
+
+/* ==========================================================================
+   14. RODAPÉ
+   ========================================================================== */
+
+footer {
+    padding: 60px 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    background-color: var(--black-bg);
+    border-top: 2px solid var(--orange-brand);
+    position: relative;
+    z-index: 2;
+}
+
+.footer-col h4 {
+    color: var(--orange-brand);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-col p {
+    color: var(--light-grey);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.footer-col a {
+    color: var(--light-grey);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--orange-brand);
+    text-decoration: underline;
+}
+
+
+/* ==========================================================================
+   15. PÁGINAS DE DETALHE DE OBRA
+   ========================================================================== */
+
+.pagina-detalhes {
+    background-color: #000;
+}
+
+.layout-split-obra {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 100px;
+    align-items: stretch;
+}
+
+.layout-split-obra.inverso {
+    flex-direction: row-reverse;
+}
+
+.bloco-texto-obra {
+    width: 45%;
+    background-color: var(--dark-grey);
+    padding: 60px 5% 60px 8%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 15px 0 50px rgba(0, 0, 0, 0.8);
+    z-index: 5;
+}
+
+.layout-split-obra.inverso .bloco-texto-obra {
+    padding: 60px 8% 60px 5%;
+    box-shadow: -15px 0 50px rgba(0, 0, 0, 0.8);
+}
+
+.fita-laranja {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: var(--orange-brand);
+}
+
+.titulo-destaque {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.titulo-destaque span {
+    color: var(--orange-brand);
+}
+
+.bloco-imagem-obra {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.predio-3d {
+    width: 135%;
+    height: auto;
+    filter: drop-shadow(-20px 20px 30px rgba(0, 0, 0, 0.9));
+    margin-left: -5%;
+    transition: transform 0.5s ease;
+}
+
+.layout-split-obra.inverso .predio-3d {
+    margin-left: 0;
+    margin-right: -15%;
+}
+
+.btn-voltar-detalhe {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--light-grey);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+    transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.btn-voltar-detalhe:hover {
+    color: var(--orange-brand);
+    border-color: var(--orange-brand);
+    background-color: rgba(255, 87, 0, 0.05);
+}
+
+.btn-voltar-detalhe:hover .seta {
+    transform: translate3d(-5px, -2px, 0);
+}
+
+.seta {
+    transition: transform 0.3s ease;
+    font-size: 1.2rem;
+    line-height: 0;
+    transform: translateY(-2px);
+    display: inline-block;
+}
+
+.info-projeto h2 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--orange-brand);
+    margin-bottom: 12px;
+}
+
+.info-projeto p {
+    color: var(--light-grey);
+    line-height: 1.8;
+}
+
+.caixa-tecnica h3 {
+    font-size: 1.05rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white-text);
+    margin-bottom: 15px;
+}
+
+/* --- Ficha técnica da obra ------------------------------------------------
+   Os campos reproduzem exatamente os de um atestado de capacidade técnica:
+   órgão contratante, objeto, modalidade, área, prazo e situação. */
+
+.ficha-tecnica {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    font-size: 0.92rem;
+    text-align: left;
+}
+
+.ficha-tecnica caption {
+    font-size: 1.05rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--white-text);
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.ficha-tecnica th,
+.ficha-tecnica td {
+    padding: 12px 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    vertical-align: top;
+}
+
+.ficha-tecnica tr:last-child th,
+.ficha-tecnica tr:last-child td {
+    border-bottom: none;
+}
+
+.ficha-tecnica th {
+    width: 42%;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--orange-brand);
+    padding-right: 16px;
+}
+
+.ficha-tecnica td {
+    color: var(--white-text);
+    font-weight: 700;
+}
+
+/* Etiqueta de situação dentro da ficha técnica.
+   Mesmo padrão dos selos dos cards: preenchido = concluída,
+   contorno = em andamento. */
+.situacao {
+    display: inline-block;
+    background-color: var(--orange-btn);
+    border: 1px solid var(--orange-btn);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 3px;
+}
+
+.situacao.andamento {
+    background-color: transparent;
+    border-color: var(--orange-brand);
+    color: var(--orange-brand);
+}
+
+/* Placeholder de imagem nas páginas de obra sem foto disponível. */
+.imagem-obra-pendente {
+    width: 100%;
+    max-width: 620px;
+    aspect-ratio: 3 / 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    background: repeating-linear-gradient(
+        135deg,
+        #141414,
+        #141414 16px,
+        #191919 16px,
+        #191919 32px
+    );
+    border: 1px solid #222;
+    border-radius: 8px;
+    margin: 40px 5%;
+    padding: 30px;
+    text-align: center;
+}
+
+.imagem-obra-pendente img {
+    height: 90px;
+    width: 90px;
+    object-fit: contain;
+    opacity: 0.5;
+}
+
+.imagem-obra-pendente span {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--light-grey);
+}
+
+@media (max-width: 600px) {
+    .ficha-tecnica th,
+    .ficha-tecnica td {
+        display: block;
+        width: 100%;
+        padding: 4px 0;
+        border-bottom: none;
+    }
+
+    .ficha-tecnica th {
+        padding-top: 14px;
+    }
+
+    .ficha-tecnica tr {
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding-bottom: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .layout-split-obra,
+    .layout-split-obra.inverso {
+        flex-direction: column;
+        padding-top: 80px;
+    }
+
+    .bloco-texto-obra,
+    .bloco-imagem-obra {
+        width: 100%;
+    }
+
+    .bloco-texto-obra {
+        padding: 40px 5%;
+        order: 2;
+    }
+
+    .bloco-imagem-obra {
+        height: 350px;
+        order: 1;
+    }
+
+    .predio-3d,
+    .layout-split-obra.inverso .predio-3d {
+        margin: 0;
+        width: 100%;
+    }
+
+    .titulo-destaque {
+        font-size: 2.2rem;
+    }
+}
+
+
+/* ==========================================================================
+   16. MODAL DE CONTATO
+   ========================================================================== */
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.modal-overlay.aberto {
+    display: flex;
+}
+
+.modal-content {
+    background-color: var(--dark-grey);
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 520px;
+    position: relative;
+    border-top: 4px solid var(--orange-brand);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    animation: abrirModal 0.3s ease-out;
+}
+
+.modal-titulo {
+    color: var(--orange-brand);
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.modal-descricao {
+    color: var(--light-grey);
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+
+/* Antes era um <span>: não focável, não acionável por teclado. */
+.fechar-modal {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    line-height: 1;
+    background: transparent;
+    border: none;
+    color: var(--light-grey);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.fechar-modal:hover {
+    color: var(--orange-brand);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.form-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campo-form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo-form label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--light-grey);
+}
+
+.campo-form label .opcional {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #9a9a9a;
+}
+
+.form-contato input,
+.form-contato textarea {
+    padding: 15px;
+    background-color: #111;
+    border: 1px solid #333;
+    color: var(--white-text);
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.form-contato input::placeholder,
+.form-contato textarea::placeholder {
+    color: #8a8a8a;
+}
+
+.form-contato input:focus,
+.form-contato textarea:focus {
+    outline: none;
+    border-color: var(--orange-brand);
+    box-shadow: 0 0 0 2px rgba(255, 87, 0, 0.25);
+}
+
+.btn-enviar {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.nota-form {
+    font-size: 0.78rem;
+    color: var(--light-grey);
+    text-align: center;
+    margin-top: 4px;
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 30px 22px;
+    }
+}
+
+
+/* ==========================================================================
+   17. BOTÃO FLUTUANTE DO WHATSAPP
+   ========================================================================== */
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: var(--orange-brand);
+    border-radius: 50px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    animation: pulse-wa 2s infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Glifo em SVG inline, branco e sem fundo. O whatsapp.png anterior tinha
+   fundo branco opaco e desenhava um quadrado dentro do círculo laranja. */
+.icone-wa {
+    width: 34px;
+    height: 34px;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .icone-wa {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+
+/* ==========================================================================
+   18. ANIMAÇÕES
+   ========================================================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 60px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes abrirModal {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse-wa {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 87, 0, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(255, 87, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 87, 0, 0);
+    }
+}
+
+.anime-inicio {
+    animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.5s;
+}
+
+/* O estado inicial invisível só é aplicado quando há JavaScript para
+   reverter. Sem JS, o conteúdo aparece normalmente. */
+html.js .scroll-hidden {
+    opacity: 0;
+    transform: translate3d(0, 80px, 0);
+    transition: opacity 1s ease-out, transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+html.js .scroll-hidden.aparecer {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+
+/* ==========================================================================
+   19. BARRA DE ROLAGEM
+   ========================================================================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--black-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--orange-brand);
+    border-radius: 10px;
+    border: 2px solid var(--black-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--orange-hover);
+}
+
+
+/* ==========================================================================
+   20. PREFERÊNCIA POR MOVIMENTO REDUZIDO
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* Nada de deslocamento: o conteúdo já nasce no lugar e visível. */
+    html.js .scroll-hidden,
+    html.js .scroll-hidden.aparecer {
+        opacity: 1;
+        transform: none;
+    }
+
+    .anime-inicio {
+        animation: none;
+    }
+
+    .whatsapp-float {
+        animation: none;
+    }
+
+    .btn:hover,
+    .lista-especialidades li:hover,
+    .link-obra:hover .portfolio-item,
+    .link-obra:hover .obra-img,
+    .container-mapa:hover,
+    .divisor-fita-container:hover .divisor-logo-center {
+        transform: none;
+    }
+}
