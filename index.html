@@ -248,7 +248,7 @@
                         <div class="portfolio-item">
                             <img src="forumdenatividade2.jpg"
                                  alt="Fachada do Fórum da Comarca de Natividade, obra executada pela EngPalmas"
-                                 class="obra-img" width="800" height="533" loading="lazy" decoding="async">
+                                 class="obra-img vt-natividade" width="800" height="533" loading="lazy" decoding="async">
                             <span class="selo-situacao">Concluída</span>
                             <div class="obra-info">
                                 <h4>Fórum de Natividade</h4>
@@ -262,7 +262,7 @@
                         <div class="portfolio-item">
                             <img src="forumdegoiatins.jpg"
                                  alt="Fachada do Fórum da Comarca de Goiatins, obra executada pela EngPalmas"
-                                 class="obra-img" width="800" height="533" loading="lazy" decoding="async">
+                                 class="obra-img vt-goiatins" width="800" height="533" loading="lazy" decoding="async">
                             <span class="selo-situacao">Concluída</span>
                             <div class="obra-info">
                                 <h4>Fórum de Goiatins</h4>
@@ -289,7 +289,7 @@
 
                     <a href="obra-cem-felix-camoa.html" class="link-obra">
                         <div class="portfolio-item sem-foto">
-                            <div class="obra-sem-foto">
+                            <div class="obra-sem-foto vt-felix-camoa">
                                 <svg class="icone-categoria" aria-hidden="true" focusable="false"><use href="#i-cat-educacao" xlink:href="#i-cat-educacao"></use></svg>
                                 <span class="rotulo-sem-foto">Educação</span>
                                 <span class="rotulo-sem-foto secundario">Foto em breve</span>
@@ -305,7 +305,7 @@
 
                     <a href="obra-escola-henrique-cirqueira.html" class="link-obra">
                         <div class="portfolio-item sem-foto">
-                            <div class="obra-sem-foto">
+                            <div class="obra-sem-foto vt-henrique">
                                 <svg class="icone-categoria" aria-hidden="true" focusable="false"><use href="#i-cat-educacao" xlink:href="#i-cat-educacao"></use></svg>
                                 <span class="rotulo-sem-foto">Educação</span>
                                 <span class="rotulo-sem-foto secundario">Foto em breve</span>
@@ -336,7 +336,7 @@
 
                     <a href="obra-iluminacao-miranorte.html" class="link-obra">
                         <div class="portfolio-item sem-foto">
-                            <div class="obra-sem-foto">
+                            <div class="obra-sem-foto vt-miranorte">
                                 <svg class="icone-categoria" aria-hidden="true" focusable="false"><use href="#i-cat-iluminacao" xlink:href="#i-cat-iluminacao"></use></svg>
                                 <span class="rotulo-sem-foto">Iluminação Pública</span>
                                 <span class="rotulo-sem-foto secundario">Foto em breve</span>
@@ -352,7 +352,7 @@
 
                     <a href="obra-iluminacao-monte-do-carmo.html" class="link-obra">
                         <div class="portfolio-item sem-foto">
-                            <div class="obra-sem-foto">
+                            <div class="obra-sem-foto vt-monte-do-carmo">
                                 <svg class="icone-categoria" aria-hidden="true" focusable="false"><use href="#i-cat-iluminacao" xlink:href="#i-cat-iluminacao"></use></svg>
                                 <span class="rotulo-sem-foto">Iluminação Pública</span>
                                 <span class="rotulo-sem-foto secundario">Foto em breve</span>
@@ -368,7 +368,7 @@
 
                     <a href="obra-iluminacao-nova-rosalandia.html" class="link-obra">
                         <div class="portfolio-item sem-foto">
-                            <div class="obra-sem-foto">
+                            <div class="obra-sem-foto vt-nova-rosalandia">
                                 <svg class="icone-categoria" aria-hidden="true" focusable="false"><use href="#i-cat-iluminacao" xlink:href="#i-cat-iluminacao"></use></svg>
                                 <span class="rotulo-sem-foto">Iluminação Pública</span>
                                 <span class="rotulo-sem-foto secundario">Foto em breve</span>
@@ -400,7 +400,7 @@
 
                     <a href="obra-ananas.html" class="link-obra">
                         <div class="portfolio-item sem-foto">
-                            <div class="obra-sem-foto">
+                            <div class="obra-sem-foto vt-ananas">
                                 <img src="logoENG.png" alt="" width="500" height="500" loading="lazy" decoding="async">
                                 <span class="rotulo-sem-foto"><span class="pendente">[[PREENCHER: categoria-ananas]]</span></span>
                                 <span class="rotulo-sem-foto secundario">Foto em breve</span>
@@ -415,6 +415,91 @@
                     </a>
 
                 </div>
+            </div>
+        </section>
+
+        <!-- ================================================================
+             ANIMAÇÃO DE CONSTRUÇÃO
+             Elevação esquemática que se monta na ordem real de execução.
+             O desenho nasce completo: a animação só existe onde o navegador
+             a suporta. Sem CSS de scroll e sem JS, vê-se o prédio pronto.
+             ================================================================ -->
+        <section class="secao-construcao" aria-labelledby="titulo-construcao">
+            <h2 class="section-title" id="titulo-construcao">Ordem de <span>Execução</span></h2>
+            <p class="construcao-resumo">Toda obra segue uma sequência que não admite atalho. É ela que separa prazo cumprido de retrabalho.</p>
+
+            <div class="construcao-layout">
+
+                <figure class="animacao-obra" id="animacao-obra">
+                    <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="desc-construcao">
+                        <title id="desc-construcao">Elevação esquemática de uma edificação, montada por camadas: fundação, estrutura, lajes, fechamento, esquadrias e acabamento.</title>
+
+                        <!-- Base sempre visível: terreno e linha de cota -->
+                        <g class="base-desenho">
+                            <path class="linha-terreno" d="M30 250h360"/>
+                            <path class="hachura-terreno" d="M40 250l-8 12M70 250l-8 12M100 250l-8 12M130 250l-8 12M160 250l-8 12M190 250l-8 12M220 250l-8 12M250 250l-8 12M280 250l-8 12M310 250l-8 12M340 250l-8 12M370 250l-8 12"/>
+                            <path class="linha-cota" d="M62 250V62M56 250h12M56 182h12M56 122h12M56 62h12"/>
+                        </g>
+
+                        <g class="camada c-fundacao">
+                            <rect x="74" y="250" width="32" height="16"/>
+                            <rect x="134" y="250" width="32" height="16"/>
+                            <rect x="194" y="250" width="32" height="16"/>
+                            <rect x="254" y="250" width="32" height="16"/>
+                            <rect x="314" y="250" width="32" height="16"/>
+                            <path class="linha-forte" d="M86 250h248"/>
+                        </g>
+
+                        <g class="camada c-estrutura">
+                            <rect x="86" y="62" width="8" height="188"/>
+                            <rect x="146" y="62" width="8" height="188"/>
+                            <rect x="206" y="62" width="8" height="188"/>
+                            <rect x="266" y="62" width="8" height="188"/>
+                            <rect x="326" y="62" width="8" height="188"/>
+                        </g>
+
+                        <g class="camada c-lajes">
+                            <rect x="82" y="182" width="256" height="8"/>
+                            <rect x="82" y="122" width="256" height="8"/>
+                            <rect x="82" y="62" width="256" height="8"/>
+                        </g>
+
+                        <g class="camada c-fechamento">
+                            <rect class="pano" x="94" y="70" width="232" height="52"/>
+                            <rect class="pano" x="94" y="130" width="232" height="52"/>
+                            <rect class="pano" x="94" y="190" width="232" height="60"/>
+                        </g>
+
+                        <g class="camada c-esquadrias">
+                            <rect x="103" y="84" width="34" height="24"/>
+                            <rect x="163" y="84" width="34" height="24"/>
+                            <rect x="223" y="84" width="34" height="24"/>
+                            <rect x="283" y="84" width="34" height="24"/>
+                            <rect x="103" y="144" width="34" height="24"/>
+                            <rect x="163" y="144" width="34" height="24"/>
+                            <rect x="223" y="144" width="34" height="24"/>
+                            <rect x="283" y="144" width="34" height="24"/>
+                            <rect x="103" y="204" width="34" height="24"/>
+                            <rect x="283" y="204" width="34" height="24"/>
+                            <rect class="porta" x="196" y="206" width="28" height="44"/>
+                        </g>
+
+                        <g class="camada c-acabamento">
+                            <rect class="platibanda" x="78" y="48" width="264" height="14"/>
+                            <rect class="contorno" x="86" y="62" width="248" height="188"/>
+                        </g>
+                    </svg>
+                </figure>
+
+                <ol class="etapas-obra">
+                    <li class="etapa e-fundacao"><span class="n-etapa">01</span> Fundação</li>
+                    <li class="etapa e-estrutura"><span class="n-etapa">02</span> Estrutura</li>
+                    <li class="etapa e-lajes"><span class="n-etapa">03</span> Lajes</li>
+                    <li class="etapa e-fechamento"><span class="n-etapa">04</span> Fechamento</li>
+                    <li class="etapa e-esquadrias"><span class="n-etapa">05</span> Esquadrias</li>
+                    <li class="etapa e-acabamento"><span class="n-etapa">06</span> Acabamento</li>
+                </ol>
+
             </div>
         </section>
 
@@ -982,7 +1067,37 @@
         }
 
         /* ---------------------------------------------------------------
-           6. Revelação das seções ao rolar
+           6. Animação de construção — fallback
+           Nada roda em Chrome/Edge, que fazem tudo em CSS. Este bloco só
+           existe para Safari e Firefox, que ainda não têm
+           animation-timeline: view().
+           --------------------------------------------------------------- */
+        var suportaTimeline = window.CSS && CSS.supports && CSS.supports('animation-timeline', 'view()');
+
+        if (!suportaTimeline && !semMovimento && 'IntersectionObserver' in window) {
+            var figura = document.getElementById('animacao-obra');
+            var etapas = document.querySelector('.etapas-obra');
+
+            if (figura) {
+                // A classe só entra agora: até aqui o desenho estava completo.
+                figura.classList.add('anim-js');
+                if (etapas) { etapas.classList.add('anim-js-etapas'); }
+
+                var obsObra = new IntersectionObserver(function (entradas, obs) {
+                    entradas.forEach(function (entrada) {
+                        if (!entrada.isIntersecting) { return; }
+                        figura.classList.add('montando');
+                        if (etapas) { etapas.classList.add('montando'); }
+                        obs.disconnect();
+                    });
+                }, { threshold: 0.3 });
+
+                obsObra.observe(figura);
+            }
+        }
+
+        /* ---------------------------------------------------------------
+           7. Revelação das seções ao rolar
            --------------------------------------------------------------- */
         var elementos = document.querySelectorAll('.scroll-hidden');
 
@@ -1007,5 +1122,6 @@
         }
     })();
     </script>
+    <p class="url-impressao">EngPalmas &#183; https://SEU-DOMINIO-AQUI.com.br/</p>
 </body>
 </html>

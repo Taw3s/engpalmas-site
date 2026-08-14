@@ -6,7 +6,7 @@ decidido ou conseguido antes de publicar.
 
 **Nada neste site foi inventado.** Todo dado que não foi informado aparece
 na tela como um marcador laranja tracejado no formato `[[PREENCHER: chave]]`.
-São **131 ocorrências** de **76 chaves distintas**, distribuídas nas 9 páginas.
+São **133 ocorrências** de **76 chaves distintas**, distribuídas nas 9 páginas.
 
 > O salto de 67 para 131 é da Fase 7: o portfólio passou de 4 para 8 obras.
 > Cada obra nova traz uma ficha técnica inteira em aberto. **Isso não é
@@ -28,9 +28,10 @@ com marcador de pendência à vista de um pregoeiro.
 ### 1. Domínio do site
 
 O endereço final ainda não existe no código. Está como `SEU-DOMINIO-AQUI.com.br`
-em **31 lugares** (7 no index, 6 em cada página de obra).
+em **64 lugares**, distribuídos pelas 9 páginas.
 
-Isso afeta `canonical`, `og:url`, `og:image`, `twitter:image` e o JSON-LD.
+Isso afeta `canonical`, `og:url`, `og:image`, `twitter:image`, o JSON-LD e o
+rodapé que aparece ao imprimir a página.
 
 **Consequência prática:** enquanto não for trocado, **colar o link no WhatsApp
 continua mostrando retângulo vazio** — que é exatamente o problema que a

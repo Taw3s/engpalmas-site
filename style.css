@@ -972,6 +972,234 @@ html.js .filtro-obras {
 
 
 /* ==========================================================================
+   10b. ANIMAÇÃO DE CONSTRUÇÃO
+   --------------------------------------------------------------------------
+   Elevação técnica que se monta por camadas conforme a seção entra na tela.
+   Três níveis de comportamento, do melhor para o mais simples:
+     1. Navegador com animation-timeline: view()  -> anima em CSS puro
+     2. Sem suporte, mas com JS                   -> IntersectionObserver
+     3. Sem nada, ou movimento reduzido           -> desenho completo, parado
+   O estado padrão é o desenho PRONTO: nada some se o efeito não rodar.
+   ========================================================================== */
+
+.secao-construcao {
+    padding: 20px 5% 40px;
+    text-align: center;
+}
+
+.construcao-resumo {
+    max-width: 720px;
+    margin: 0 auto 35px;
+    color: var(--light-grey);
+    font-size: 1.05rem;
+}
+
+.construcao-layout {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 210px;
+    gap: 40px;
+    align-items: center;
+}
+
+@media (max-width: 760px) {
+    .construcao-layout {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
+
+.animacao-obra {
+    margin: 0;
+    width: 100%;
+}
+
+.animacao-obra svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* --- Traço do desenho ----------------------------------------------------- */
+
+.animacao-obra .base-desenho path {
+    fill: none;
+    stroke: #4a4a4a;
+    stroke-width: 1.5;
+}
+
+.animacao-obra .linha-terreno {
+    stroke: #6a6a6a !important;
+    stroke-width: 2 !important;
+}
+
+/* Hachura de terreno: mais apagada que a linha do solo. */
+.animacao-obra .hachura-terreno {
+    stroke: #3a3a3a;
+    stroke-width: 1.2;
+}
+
+.animacao-obra .linha-cota {
+    stroke-dasharray: 4 4;
+}
+
+.animacao-obra .camada rect {
+    fill: var(--orange-brand);
+    fill-opacity: 0.9;
+}
+
+.animacao-obra .c-fundacao rect {
+    fill: #7a7a7a;
+    fill-opacity: 1;
+}
+
+.animacao-obra .linha-forte {
+    fill: none;
+    stroke: #9a9a9a;
+    stroke-width: 4;
+}
+
+/* Panos de fechamento: preenchimento discreto, para não competir com a
+   estrutura, que é o que a empresa executa. */
+.animacao-obra .pano {
+    fill: var(--orange-brand);
+    fill-opacity: 0.12;
+    stroke: var(--orange-brand);
+    stroke-opacity: 0.35;
+    stroke-width: 1;
+}
+
+.animacao-obra .c-esquadrias rect {
+    fill: #0a0a0a;
+    fill-opacity: 1;
+    stroke: var(--orange-brand);
+    stroke-width: 1.5;
+}
+
+.animacao-obra .porta {
+    fill: var(--orange-brand) !important;
+    fill-opacity: 0.35 !important;
+}
+
+.animacao-obra .contorno {
+    fill: none;
+    stroke: var(--orange-brand);
+    stroke-width: 2.5;
+}
+
+.animacao-obra .platibanda {
+    fill: var(--orange-brand);
+    fill-opacity: 0.85;
+}
+
+/* --- Legenda das etapas --------------------------------------------------- */
+
+.etapas-obra {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.etapa {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 0;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--white-text);
+    border-bottom: 1px solid #1e1e1e;
+}
+
+.n-etapa {
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    font-weight: 900;
+    color: var(--orange-brand);
+    border: 1px solid var(--orange-brand);
+    border-radius: 3px;
+    padding: 2px 6px;
+}
+
+@media (max-width: 760px) {
+    .etapas-obra {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0 20px;
+    }
+}
+
+/* --- Nível 1: animação em CSS puro, guiada pelo scroll -------------------- */
+
+@keyframes montarCamada {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes acenderEtapa {
+    from { opacity: 0.3; }
+    to   { opacity: 1; }
+}
+
+@supports (animation-timeline: view()) {
+    .animacao-obra .camada,
+    .etapas-obra .etapa {
+        animation-timing-function: linear;
+        animation-fill-mode: both;
+        animation-timeline: view();
+    }
+
+    .animacao-obra .camada { animation-name: montarCamada; }
+    .etapas-obra .etapa    { animation-name: acenderEtapa; }
+
+    .c-fundacao,   .e-fundacao   { animation-range: cover 12% cover 27%; }
+    .c-estrutura,  .e-estrutura  { animation-range: cover 22% cover 39%; }
+    .c-lajes,      .e-lajes      { animation-range: cover 34% cover 51%; }
+    .c-fechamento, .e-fechamento { animation-range: cover 46% cover 63%; }
+    .c-esquadrias, .e-esquadrias { animation-range: cover 58% cover 75%; }
+    .c-acabamento, .e-acabamento { animation-range: cover 70% cover 86%; }
+}
+
+/* --- Nível 2: fallback por JS -------------------------------------------- */
+/* A classe .anim-js só é aplicada pelo script quando o navegador NÃO
+   suporta animation-timeline. Até lá, tudo permanece visível. */
+
+.anim-js .camada,
+.anim-js-etapas .etapa {
+    opacity: 0;
+    transition: opacity 0.55s ease-out, transform 0.55s ease-out;
+}
+
+.anim-js .camada {
+    transform: translateY(12px);
+}
+
+.anim-js-etapas .etapa {
+    opacity: 0.3;
+}
+
+.anim-js.montando .camada {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.anim-js-etapas.montando .etapa {
+    opacity: 1;
+}
+
+.anim-js.montando .c-fundacao,   .anim-js-etapas.montando .e-fundacao   { transition-delay: 0.05s; }
+.anim-js.montando .c-estrutura,  .anim-js-etapas.montando .e-estrutura  { transition-delay: 0.30s; }
+.anim-js.montando .c-lajes,      .anim-js-etapas.montando .e-lajes      { transition-delay: 0.55s; }
+.anim-js.montando .c-fechamento, .anim-js-etapas.montando .e-fechamento { transition-delay: 0.80s; }
+.anim-js.montando .c-esquadrias, .anim-js-etapas.montando .e-esquadrias { transition-delay: 1.05s; }
+.anim-js.montando .c-acabamento, .anim-js-etapas.montando .e-acabamento { transition-delay: 1.30s; }
+
+
+/* ==========================================================================
    11. ESPECIALIDADES
    ========================================================================== */
 
@@ -2076,5 +2304,326 @@ html.js .scroll-hidden.aparecer {
     .container-mapa:hover,
     .divisor-fita-container:hover .divisor-logo-center {
         transform: none;
+    }
+
+    /* Animação de construção: desenho completo e parado. */
+    .animacao-obra .camada,
+    .anim-js .camada,
+    .anim-js.montando .camada {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .etapas-obra .etapa,
+    .anim-js-etapas .etapa {
+        animation: none !important;
+        opacity: 1 !important;
+        transition: none !important;
+    }
+
+    /* Transições entre páginas: corta a animação, mantém a navegação. */
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none !important;
+    }
+}
+
+
+/* ==========================================================================
+   22. TRANSIÇÃO ENTRE PÁGINAS (VIEW TRANSITIONS)
+   --------------------------------------------------------------------------
+   Dá continuidade visual entre o card do portfólio e a imagem da página de
+   detalhe. Onde não houver suporte, a navegação acontece normalmente —
+   nenhum conteúdo depende disto.
+   ========================================================================== */
+
+@view-transition {
+    navigation: auto;
+}
+
+/* Um nome por obra, repetido nos dois lados da navegação: no card da home
+   e na imagem da página de detalhe. Nomes precisam ser únicos por página —
+   os grupos ocultos pelo filtro usam display:none e não contam. */
+.vt-natividade      { view-transition-name: obra-natividade; }
+.vt-goiatins        { view-transition-name: obra-goiatins; }
+.vt-felix-camoa     { view-transition-name: obra-felix-camoa; }
+.vt-henrique        { view-transition-name: obra-henrique; }
+.vt-miranorte       { view-transition-name: obra-miranorte; }
+.vt-monte-do-carmo  { view-transition-name: obra-monte-do-carmo; }
+.vt-nova-rosalandia { view-transition-name: obra-nova-rosalandia; }
+.vt-ananas          { view-transition-name: obra-ananas; }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.28s;
+}
+
+
+/* ==========================================================================
+   23. IMPRESSÃO
+   --------------------------------------------------------------------------
+   A ficha técnica é o que uma comissão imprime e anexa ao processo.
+   Fundo branco, texto preto, sem navegação e sem efeito.
+   ========================================================================== */
+
+@page {
+    size: A4;
+    margin: 16mm 14mm;
+}
+
+.url-impressao {
+    display: none;
+}
+
+@media print {
+    /* Fora: tudo que não é conteúdo. */
+    header,
+    nav,
+    .nav-toggle,
+    .whatsapp-float,
+    .modal-overlay,
+    .bg-pattern,
+    .pular-conteudo,
+    .filtro-obras,
+    .divisor-fita-container,
+    .secao-construcao,
+    .btn,
+    .btn-voltar-detalhe,
+    .container-mapa,
+    .obra-ver,
+    .sprite-icones {
+        display: none !important;
+    }
+
+    html,
+    body,
+    .secao-preta-container,
+    .pagina-detalhes {
+        background: #fff !important;
+        color: #000 !important;
+    }
+
+    .secao-preta-container::after {
+        display: none !important;
+    }
+
+    * {
+        animation: none !important;
+        transition: none !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    /* Nada de conteúdo escondido por animação não executada. */
+    .scroll-hidden,
+    html.js .scroll-hidden,
+    .camada,
+    .etapa {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    h1, h2, h3, h4,
+    .section-title,
+    .titulo-destaque,
+    .titulo-categoria,
+    .logo-texto,
+    .footer-col h4,
+    .obra-info h4,
+    .dados-municipio a {
+        color: #000 !important;
+    }
+
+    p,
+    td,
+    .footer-col p,
+    .meta-municipio,
+    .especialidades-conteudo p {
+        color: #1a1a1a !important;
+    }
+
+    /* O laranja vira preto no papel; a hierarquia passa a ser o peso. */
+    .section-title span,
+    .titulo-destaque span,
+    .check-laranja,
+    .n-etapa {
+        color: #000 !important;
+    }
+
+    /* Hero ocupa uma folha inteira à toa. */
+    .hero {
+        min-height: auto !important;
+        padding: 0 0 10mm !important;
+        page-break-after: avoid;
+    }
+
+    .hero h1 { font-size: 20pt !important; }
+    .hero h1 span { font-size: 22pt !important; }
+
+    section {
+        padding: 0 0 8mm !important;
+    }
+
+    /* --- Ficha técnica: o que realmente importa no papel --- */
+    .caixa-tecnica {
+        background: none !important;
+        border: 1px solid #000 !important;
+        border-left: 4px solid #000 !important;
+        padding: 6mm !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .ficha-tecnica {
+        font-size: 10pt !important;
+    }
+
+    .ficha-tecnica caption {
+        color: #000 !important;
+        font-size: 12pt !important;
+    }
+
+    .ficha-tecnica th {
+        color: #000 !important;
+        width: 38% !important;
+    }
+
+    .ficha-tecnica th,
+    .ficha-tecnica td {
+        border-bottom: 1px solid #bbb !important;
+        display: table-cell !important;
+        width: auto;
+    }
+
+    .ficha-tecnica tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .situacao,
+    .selo-situacao {
+        background: none !important;
+        color: #000 !important;
+        border: 1px solid #000 !important;
+    }
+
+    /* Marcador de pendência precisa continuar gritando no papel. */
+    .pendente {
+        background: none !important;
+        color: #000 !important;
+        border: 1px dashed #000 !important;
+    }
+
+    /* --- Quebras de página --- */
+    h1, h2, h3, h4 {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    .grupo-obras,
+    .portfolio-item,
+    .card-capacidade,
+    .ficha-empresa div,
+    .lista-municipios li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .layout-split-obra {
+        display: block !important;
+        min-height: 0 !important;
+        padding-top: 0 !important;
+    }
+
+    .bloco-texto-obra,
+    .bloco-imagem-obra {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .bloco-imagem-obra {
+        break-before: avoid;
+    }
+
+    .predio-3d {
+        width: 60% !important;
+        margin: 6mm auto 0 !important;
+        filter: none !important;
+    }
+
+    .imagem-obra-pendente,
+    .obra-sem-foto {
+        border: 1px solid #999 !important;
+        background: none !important;
+    }
+
+    /* Blocos escuros que ficariam ilegíveis no papel. */
+    .lista-especialidades li,
+    .ficha-empresa,
+    .ficha-empresa div,
+    .card-capacidade {
+        background: none !important;
+        border: 1px solid #999 !important;
+        color: #000 !important;
+    }
+
+    .card-capacidade .numero,
+    .card-capacidade .rotulo,
+    .ficha-empresa dt,
+    .ficha-empresa dd {
+        color: #000 !important;
+    }
+
+    /* Mapa: o contorno precisa aparecer em fundo branco. */
+    .mapa-contorno {
+        fill: #f2f2f2 !important;
+        stroke: #555 !important;
+    }
+
+    .marcador .disco {
+        fill: #fff !important;
+        stroke: #000 !important;
+    }
+
+    .marcador .num,
+    .num-municipio {
+        fill: #000 !important;
+        color: #000 !important;
+        background: none !important;
+        border: 1px solid #000 !important;
+    }
+
+    .marcador-sede circle,
+    .marcador-sede .eixo {
+        fill: #000 !important;
+        stroke: #000 !important;
+    }
+
+    /* Endereço de links externos, para o papel não perder a informação. */
+    .footer-col a[href^="http"]::after,
+    .footer-col a[href^="tel"]::after {
+        content: " " attr(href);
+        font-size: 8pt;
+        color: #444;
+    }
+
+    footer {
+        border-top: 1px solid #000 !important;
+        padding: 6mm 0 0 !important;
+        break-inside: avoid;
+    }
+
+    /* Rodapé impresso com a URL da página. */
+    .url-impressao {
+        display: block !important;
+        margin-top: 5mm;
+        padding-top: 3mm;
+        border-top: 1px solid #999;
+        font-size: 8pt;
+        color: #444 !important;
+        text-align: center;
     }
 }
