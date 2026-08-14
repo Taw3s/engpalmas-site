@@ -3,6 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content-Security-Policy — política mínima para o que o site
+         realmente usa. Cada diretiva e o que ela libera:
+           default-src 'none'  nada é permitido por padrão; o resto é exceção
+           script-src          só os dois scripts inline desta página, por hash
+                               SHA-256. Nenhum script externo, nenhum eval.
+                               ATENÇÃO: editar o JS invalida o hash e o script
+                               deixa de rodar. Regenerar conforme AUDITORIA.md
+           style-src           style.css (self) + folha do Google Fonts
+           font-src            arquivos .woff2 do Google Fonts
+           img-src             só imagens do próprio domínio
+           frame-src          só o embed do mapa do Google
+           base-uri 'none'     impede injeção de <base> para sequestrar links
+           form-action 'none'  o formulário é tratado em JS; nada deve ser
+                               submetido a servidor nenhum
+         Não incluído: frame-ancestors, que é ignorado em <meta> e exige
+         cabeçalho HTTP — ver AUDITORIA.md, item (b). -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw=' 'sha256-0d+o2eSwcqeedAltUaIEXQDrl4o5rQhbhTIB2iBTktc='; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; frame-src https://www.google.com; base-uri 'none'; form-action 'none'">
+
 
     <title>EngPalmas | Engenharia Civil e Elétrica em Palmas - TO</title>
     <meta name="description" content="EngPalmas — engenharia civil e elétrica em Palmas, Tocantins. Execução de edificações públicas, subestações abrigadas de 34,5 kV e projetos integrados para órgãos contratantes.">
@@ -718,8 +736,8 @@
              ================================================================ -->
         <section id="localizacao" class="secao-localizacao scroll-hidden">
             <div class="especialidades-conteudo">
-                <h2 class="section-title" style="text-align: center;">Nossa <span>Sede</span></h2>
-                <p style="text-align: center;">Sede própria em Palmas, com estrutura administrativa e técnica para atendimento a órgãos contratantes e fornecedores.</p>
+                <h2 class="section-title centralizado">Nossa <span>Sede</span></h2>
+                <p class="centralizado">Sede própria em Palmas, com estrutura administrativa e técnica para atendimento a órgãos contratantes e fornecedores.</p>
 
                 <div class="container-mapa">
                     <!-- Embed ancorado em COORDENADAS, não em endereço.
@@ -734,15 +752,14 @@
                         src="https://www.google.com/maps?q=-10.2407635,-48.3384534&z=17&hl=pt-BR&output=embed"
                         width="100%"
                         height="350"
-                        style="border:0;"
-                        allowfullscreen=""
                         loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
+                        referrerpolicy="no-referrer"
+                        sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox">
                     </iframe>
                 </div>
 
-                <div class="caixa-tecnica" style="text-align: center; border-left: none;">
-                    <p style="margin-bottom: 0;"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-local" xlink:href="#i-local"></use></svg><strong>Endereço:</strong> QD 903 SUL, ALAMEDA 19, QD 15, LOTE 11 — PLANO DIRETOR SUL, PALMAS / TO — CEP <span class="pendente">[[PREENCHER: cep]]</span></p>
+                <div class="caixa-tecnica sem-barra centralizado">
+                    <p class="sem-margem-baixo"><svg class="icone" aria-hidden="true" focusable="false"><use href="#i-local" xlink:href="#i-local"></use></svg><strong>Endereço:</strong> QD 903 SUL, ALAMEDA 19, QD 15, LOTE 11 — PLANO DIRETOR SUL, PALMAS / TO — CEP <span class="pendente">[[PREENCHER: cep]]</span></p>
                 </div>
             </div>
         </section>

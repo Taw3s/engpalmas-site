@@ -1615,7 +1615,22 @@ html.js .filtro-obras {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Utilitários que substituem atributos style= inline. Sem eles, o CSP
+   precisaria liberar 'unsafe-inline' em style-src. */
+.centralizado {
+    text-align: center;
+}
+
+.caixa-tecnica.sem-barra {
+    border-left: none;
+}
+
+.sem-margem-baixo {
+    margin-bottom: 0;
+}
+
 .container-mapa iframe {
+    border: 0;
     display: block;
     filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
     transition: filter 0.5s ease;

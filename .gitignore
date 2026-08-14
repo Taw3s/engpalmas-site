@@ -1,0 +1,73 @@
+# ==========================================================================
+# EngPalmas — arquivos que nunca devem ir para o repositório
+# O repositório é PÚBLICO. Tudo o que for commitado aqui fica visível,
+# e continua recuperável no histórico mesmo depois de apagado.
+# ==========================================================================
+
+# --- Credenciais e segredos -----------------------------------------------
+.env
+.env.*
+*.env
+secrets.*
+credentials.*
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+id_rsa
+id_rsa.*
+*.ppk
+.netrc
+.htpasswd
+
+# --- Configuração local de ferramentas ------------------------------------
+.vscode/
+.idea/
+*.code-workspace
+
+# --- Temporários e backups ------------------------------------------------
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*.swp
+*~
+*.log
+
+# --- Lixo de sistema operacional ------------------------------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# --- Pacotes e dependências (caso algum dia entre build) ------------------
+node_modules/
+package-lock.json
+yarn.lock
+dist/
+build/
+
+# --- Arquivos compactados de trabalho -------------------------------------
+# O portedecelular.zip era um backup da própria pasta e foi parar no
+# histórico do repositório público. Não repetir.
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+
+# --- Material de estudo e rascunho ----------------------------------------
+# Exercícios de Python que estavam soltos na raiz do site.
+_estudos/
+rascunho/
+*.py
+
+# --- Instruções de trabalho -----------------------------------------------
+# Os arquivos fase*.md são anotações internas de desenvolvimento e não
+# fazem parte do site publicado.
+fase*.md

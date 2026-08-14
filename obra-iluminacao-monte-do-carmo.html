@@ -3,6 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Content-Security-Policy — política mínima para o que o site
+         realmente usa. Cada diretiva e o que ela libera:
+           default-src 'none'  nada é permitido por padrão; o resto é exceção
+           script-src          só os dois scripts inline desta página, por hash
+                               SHA-256. Nenhum script externo, nenhum eval.
+                               ATENÇÃO: editar o JS invalida o hash e o script
+                               deixa de rodar. Regenerar conforme AUDITORIA.md
+           style-src           style.css (self) + folha do Google Fonts
+           font-src            arquivos .woff2 do Google Fonts
+           img-src             só imagens do próprio domínio
+           frame-src           não usado nesta página (coberto por default-src)
+           base-uri 'none'     impede injeção de <base> para sequestrar links
+           form-action 'none'  o formulário é tratado em JS; nada deve ser
+                               submetido a servidor nenhum
+         Não incluído: frame-ancestors, que é ignorado em <meta> e exige
+         cabeçalho HTTP — ver AUDITORIA.md, item (b). -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw=' 'sha256-seHh21Iz+9CrDNaWLJD3I0RUFTailxAmGFbmr7puRbM='; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; base-uri 'none'; form-action 'none'">
+
 
     <title>Iluminação Pública de Monte do Carmo | Obra executada pela EngPalmas</title>
     <meta name="description" content="Ficha técnica da obra de iluminação pública executada pela EngPalmas em Monte do Carmo / TO: órgão contratante, objeto do contrato, modalidade de licitação e prazo de execução.">
