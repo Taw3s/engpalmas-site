@@ -97,6 +97,33 @@
         <symbol id="i-local" viewBox="0 0 24 24">
             <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7m0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5"/>
         </symbol>
+
+        <!-- Ícones de categoria de obra. Traço, não preenchimento: mesma
+             linguagem geométrica dos desenhos técnicos. Usados no card sem
+             foto, no título da categoria e (na Fase 8) na legenda do mapa. -->
+        <symbol id="i-cat-judiciario" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M2.5 9.5 12 4l9.5 5.5"/>
+            <path d="M3.5 12h17"/>
+            <path d="M6 12v6M10 12v6M14 12v6M18 12v6"/>
+            <path d="M4 18h16"/>
+            <path d="M2.5 21h19"/>
+        </symbol>
+
+        <symbol id="i-cat-educacao" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M4 21V8h16v13"/>
+            <path d="M2.5 8h19"/>
+            <path d="M6.5 11.5h11v3.5h-11z"/>
+            <path d="M10.5 11.5v3.5M14 11.5v3.5"/>
+            <path d="M10 21v-3.5h4V21"/>
+        </symbol>
+
+        <symbol id="i-cat-iluminacao" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+            <path d="M6 22h6"/>
+            <path d="M9 22V7"/>
+            <path d="M9 7V5.5A2.5 2.5 0 0 1 11.5 3h2"/>
+            <path d="M13.5 2h7l-1.7 3.2h-7z"/>
+            <path d="M14.4 6.4 11.5 13h10.2l-2.9-6.6" stroke-dasharray="2.2 2"/>
+        </symbol>
     </svg>
 
     <a href="#conteudo" class="pular-conteudo">Pular para o conteúdo</a>
@@ -123,6 +150,7 @@
                 <li><a href="#empresa">A Empresa</a></li>
                 <li><a href="#obras">Obras</a></li>
                 <li><a href="#especialidades">Especialidades</a></li>
+                <li><a href="#atuacao">Atuação</a></li>
                 <li><a href="#capacidade">Capacidade Técnica</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
@@ -192,73 +220,202 @@
              ================================================================ -->
         <section id="obras" class="secao-obras">
             <h2 class="section-title">Obras <span>Executadas</span></h2>
+            <p class="obras-resumo">Oito obras públicas executadas em sete municípios do Tocantins, em três frentes técnicas distintas.</p>
 
-            <div class="portfolio-grid">
+            <!-- Filtro. Só aparece com JavaScript ativo: sem ele, todos os
+                 grupos ficam visíveis e nada é escondido. -->
+            <div class="filtro-obras" id="filtro-obras" role="group" aria-label="Filtrar obras por categoria">
+                <button type="button" class="btn-filtro ativo" data-filtro="todas" aria-pressed="true">Todas <span class="qtd">8</span></button>
+                <button type="button" class="btn-filtro" data-filtro="judiciario" aria-pressed="false">Judiciário <span class="qtd">2</span></button>
+                <button type="button" class="btn-filtro" data-filtro="educacao" aria-pressed="false">Educação <span class="qtd">2</span></button>
+                <button type="button" class="btn-filtro" data-filtro="iluminacao" aria-pressed="false">Iluminação Pública <span class="qtd">3</span></button>
+                <button type="button" class="btn-filtro" data-filtro="outras" aria-pressed="false">Outras <span class="qtd">1</span></button>
+            </div>
+            <p class="status-filtro apenas-leitor" role="status" aria-live="polite"></p>
 
-                <a href="obra-natividade.html" class="link-obra">
-                    <div class="portfolio-item">
-                        <img src="forumdenatividade2.jpg"
-                             alt="Fachada do Fórum da Comarca de Natividade, obra executada pela EngPalmas"
-                             class="obra-img" width="800" height="533" loading="lazy" decoding="async">
-                        <span class="selo-situacao">Concluída</span>
-                        <div class="obra-info">
-                            <h3>Fórum de Natividade</h3>
-                            <span class="obra-local">Natividade / TO</span>
-                            <span class="obra-ver">Ver ficha técnica →</span>
-                        </div>
-                    </div>
-                </a>
+            <!-- ---------------------------------------------------------
+                 JUDICIÁRIO
+                 --------------------------------------------------------- -->
+            <div class="grupo-obras" data-categoria="judiciario">
+                <h3 class="titulo-categoria">
+                    <svg class="icone-categoria-titulo" aria-hidden="true" focusable="false"><use href="#i-cat-judiciario" xlink:href="#i-cat-judiciario"></use></svg>
+                    Judiciário
+                    <span class="contagem-categoria">2 obras</span>
+                </h3>
 
-                <a href="obra-goiatins.html" class="link-obra">
-                    <div class="portfolio-item">
-                        <img src="forumdegoiatins.jpg"
-                             alt="Fachada do Fórum da Comarca de Goiatins, obra executada pela EngPalmas"
-                             class="obra-img" width="800" height="533" loading="lazy" decoding="async">
-                        <span class="selo-situacao">Concluída</span>
-                        <div class="obra-info">
-                            <h3>Fórum de Goiatins</h3>
-                            <span class="obra-local">Goiatins / TO</span>
-                            <span class="obra-ver">Ver ficha técnica →</span>
-                        </div>
-                    </div>
-                </a>
+                <div class="portfolio-grid">
 
-                <!-- Os arquivos obraananas.png e fotoG.png nunca existiram no
-                     repositório: os dois cards exibiam imagem quebrada.
-                     Placeholder até as fotos serem fornecidas. -->
-                <a href="obra-ananas.html" class="link-obra">
-                    <div class="portfolio-item">
-                        <div class="obra-sem-foto">
-                            <img src="logoENG.png" alt="" width="500" height="500" loading="lazy" decoding="async">
-                            <span>Foto em breve</span>
+                    <a href="obra-natividade.html" class="link-obra">
+                        <div class="portfolio-item">
+                            <img src="forumdenatividade2.jpg"
+                                 alt="Fachada do Fórum da Comarca de Natividade, obra executada pela EngPalmas"
+                                 class="obra-img" width="800" height="533" loading="lazy" decoding="async">
+                            <span class="selo-situacao">Concluída</span>
+                            <div class="obra-info">
+                                <h4>Fórum de Natividade</h4>
+                                <span class="obra-local">Natividade / TO</span>
+                                <span class="obra-ver">Ver ficha técnica →</span>
+                            </div>
                         </div>
-                        <!-- A situação desta obra não foi informada. O selo
-                             existe para manter os 4 cards padronizados, mas
-                             carrega o marcador em vez de um status inventado. -->
-                        <span class="selo-situacao selo-pendente">[[PREENCHER: situacao-ananas]]</span>
-                        <div class="obra-info">
-                            <h3>Obra de Ananás</h3>
-                            <span class="obra-local">Ananás / TO</span>
-                            <span class="obra-ver">Ver ficha técnica →</span>
-                        </div>
-                    </div>
-                </a>
+                    </a>
 
-                <a href="obra-em-andamento.html" class="link-obra">
-                    <div class="portfolio-item">
-                        <div class="obra-sem-foto">
-                            <img src="logoENG.png" alt="" width="500" height="500" loading="lazy" decoding="async">
-                            <span>Foto em breve</span>
+                    <a href="obra-goiatins.html" class="link-obra">
+                        <div class="portfolio-item">
+                            <img src="forumdegoiatins.jpg"
+                                 alt="Fachada do Fórum da Comarca de Goiatins, obra executada pela EngPalmas"
+                                 class="obra-img" width="800" height="533" loading="lazy" decoding="async">
+                            <span class="selo-situacao">Concluída</span>
+                            <div class="obra-info">
+                                <h4>Fórum de Goiatins</h4>
+                                <span class="obra-local">Goiatins / TO</span>
+                                <span class="obra-ver">Ver ficha técnica →</span>
+                            </div>
                         </div>
-                        <span class="selo-situacao andamento">Em andamento</span>
-                        <div class="obra-info">
-                            <h3>Obra em Andamento</h3>
-                            <span class="obra-local"><span class="pendente">[[PREENCHER: cidade-obra-andamento]]</span></span>
-                            <span class="obra-ver">Ver ficha técnica →</span>
-                        </div>
-                    </div>
-                </a>
+                    </a>
 
+                </div>
+            </div>
+
+            <!-- ---------------------------------------------------------
+                 EDUCAÇÃO
+                 --------------------------------------------------------- -->
+            <div class="grupo-obras" data-categoria="educacao">
+                <h3 class="titulo-categoria">
+                    <svg class="icone-categoria-titulo" aria-hidden="true" focusable="false"><use href="#i-cat-educacao" xlink:href="#i-cat-educacao"></use></svg>
+                    Educação
+                    <span class="contagem-categoria">2 obras</span>
+                </h3>
+
+                <div class="portfolio-grid">
+
+                    <a href="obra-cem-felix-camoa.html" class="link-obra">
+                        <div class="portfolio-item">
+                            <div class="obra-sem-foto">
+                                <svg class="icone-categoria" aria-hidden="true" focusable="false"><use href="#i-cat-educacao" xlink:href="#i-cat-educacao"></use></svg>
+                                <span class="rotulo-sem-foto">Educação</span>
+                                <span class="rotulo-sem-foto secundario">Foto em breve</span>
+                            </div>
+                            <span class="selo-situacao selo-pendente">[[PREENCHER: situacao-felix-camoa]]</span>
+                            <div class="obra-info">
+                                <h4>CEM Félix Camoa</h4>
+                                <span class="obra-local">Porto Nacional / TO</span>
+                                <span class="obra-ver">Ver ficha técnica →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="obra-escola-henrique-cirqueira.html" class="link-obra">
+                        <div class="portfolio-item">
+                            <div class="obra-sem-foto">
+                                <svg class="icone-categoria" aria-hidden="true" focusable="false"><use href="#i-cat-educacao" xlink:href="#i-cat-educacao"></use></svg>
+                                <span class="rotulo-sem-foto">Educação</span>
+                                <span class="rotulo-sem-foto secundario">Foto em breve</span>
+                            </div>
+                            <span class="selo-situacao selo-pendente">[[PREENCHER: situacao-henrique-cirqueira]]</span>
+                            <div class="obra-info">
+                                <h4>Escola Estadual Henrique Cirqueira Amori</h4>
+                                <span class="obra-local"><span class="pendente">[[PREENCHER: cidade-henrique-cirqueira]]</span></span>
+                                <span class="obra-ver">Ver ficha técnica →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- ---------------------------------------------------------
+                 ILUMINAÇÃO PÚBLICA
+                 --------------------------------------------------------- -->
+            <div class="grupo-obras" data-categoria="iluminacao">
+                <h3 class="titulo-categoria">
+                    <svg class="icone-categoria-titulo" aria-hidden="true" focusable="false"><use href="#i-cat-iluminacao" xlink:href="#i-cat-iluminacao"></use></svg>
+                    Iluminação Pública
+                    <span class="contagem-categoria">3 obras</span>
+                </h3>
+
+                <div class="portfolio-grid">
+
+                    <a href="obra-iluminacao-miranorte.html" class="link-obra">
+                        <div class="portfolio-item">
+                            <div class="obra-sem-foto">
+                                <svg class="icone-categoria" aria-hidden="true" focusable="false"><use href="#i-cat-iluminacao" xlink:href="#i-cat-iluminacao"></use></svg>
+                                <span class="rotulo-sem-foto">Iluminação Pública</span>
+                                <span class="rotulo-sem-foto secundario">Foto em breve</span>
+                            </div>
+                            <span class="selo-situacao selo-pendente">[[PREENCHER: situacao-miranorte]]</span>
+                            <div class="obra-info">
+                                <h4>Iluminação Pública de Miranorte</h4>
+                                <span class="obra-local">Miranorte / TO</span>
+                                <span class="obra-ver">Ver ficha técnica →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="obra-iluminacao-monte-do-carmo.html" class="link-obra">
+                        <div class="portfolio-item">
+                            <div class="obra-sem-foto">
+                                <svg class="icone-categoria" aria-hidden="true" focusable="false"><use href="#i-cat-iluminacao" xlink:href="#i-cat-iluminacao"></use></svg>
+                                <span class="rotulo-sem-foto">Iluminação Pública</span>
+                                <span class="rotulo-sem-foto secundario">Foto em breve</span>
+                            </div>
+                            <span class="selo-situacao selo-pendente">[[PREENCHER: situacao-monte-do-carmo]]</span>
+                            <div class="obra-info">
+                                <h4>Iluminação Pública de Monte do Carmo</h4>
+                                <span class="obra-local">Monte do Carmo / TO</span>
+                                <span class="obra-ver">Ver ficha técnica →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="obra-iluminacao-nova-rosalandia.html" class="link-obra">
+                        <div class="portfolio-item">
+                            <div class="obra-sem-foto">
+                                <svg class="icone-categoria" aria-hidden="true" focusable="false"><use href="#i-cat-iluminacao" xlink:href="#i-cat-iluminacao"></use></svg>
+                                <span class="rotulo-sem-foto">Iluminação Pública</span>
+                                <span class="rotulo-sem-foto secundario">Foto em breve</span>
+                            </div>
+                            <span class="selo-situacao selo-pendente">[[PREENCHER: situacao-nova-rosalandia]]</span>
+                            <div class="obra-info">
+                                <h4>Iluminação Pública de Nova Rosalândia</h4>
+                                <span class="obra-local">Nova Rosalândia / TO</span>
+                                <span class="obra-ver">Ver ficha técnica →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- ---------------------------------------------------------
+                 OUTRAS — categoria ainda não informada.
+                 "Outras Obras" é rótulo de organização, não classificação
+                 técnica. A categoria real está como pendência no card.
+                 --------------------------------------------------------- -->
+            <div class="grupo-obras" data-categoria="outras">
+                <h3 class="titulo-categoria">
+                    Outras Obras
+                    <span class="contagem-categoria">1 obra</span>
+                </h3>
+
+                <div class="portfolio-grid">
+
+                    <a href="obra-ananas.html" class="link-obra">
+                        <div class="portfolio-item">
+                            <div class="obra-sem-foto">
+                                <img src="logoENG.png" alt="" width="500" height="500" loading="lazy" decoding="async">
+                                <span class="rotulo-sem-foto"><span class="pendente">[[PREENCHER: categoria-ananas]]</span></span>
+                                <span class="rotulo-sem-foto secundario">Foto em breve</span>
+                            </div>
+                            <span class="selo-situacao selo-pendente">[[PREENCHER: situacao-ananas]]</span>
+                            <div class="obra-info">
+                                <h4>Obra de Ananás</h4>
+                                <span class="obra-local">Ananás / TO</span>
+                                <span class="obra-ver">Ver ficha técnica →</span>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
             </div>
         </section>
 
@@ -282,6 +439,7 @@
                     <li><span class="check-laranja" aria-hidden="true">✓</span> Subestações Abrigadas (34,5 kV)</li>
                     <li><span class="check-laranja" aria-hidden="true">✓</span> Projetos e Execução Integrada</li>
                     <li><span class="check-laranja" aria-hidden="true">✓</span> Levantamento Topográfico</li>
+                    <li><span class="check-laranja" aria-hidden="true">✓</span> Iluminação Pública</li>
                 </ul>
             </div>
         </section>
@@ -293,7 +451,152 @@
         </div>
 
         <!-- ================================================================
-             5. CAPACIDADE TÉCNICA
+             5. ÁREA DE ATUAÇÃO — MAPA
+             Contorno e centroides gerados a partir da malha territorial
+             oficial do IBGE (servicodados.ibge.gov.br/api/v3/malhas,
+             estado 17 e municípios por código). Projeção equirretangular
+             com correção de latitude. Marcador = centroide do município.
+             ================================================================ -->
+        <section id="atuacao" class="secao-atuacao scroll-hidden">
+            <h2 class="section-title">Área de <span>Atuação</span></h2>
+            <p class="atuacao-resumo">Obras executadas em sete municípios do Tocantins, do extremo norte ao sudeste do estado.</p>
+
+            <div class="atuacao-layout">
+
+                <figure class="mapa-figura">
+                    <svg class="mapa-to" viewBox="0 0 624 1024" xmlns="http://www.w3.org/2000/svg">
+                        <title>Mapa do Tocantins com os municípios onde a EngPalmas executou obras</title>
+
+                        <path class="mapa-contorno" d="M405.8 163.1L407 160.6L408.2 156.3L407.9 153.9L408.3 151.7L409.8 149.3L411.9 145.1L411.7 142.3L411.1 140L409.2 137.4L407.4 133.6L406.6 131.5L405.8 128L405.3 123.4L405.8 120.4L406 116.9L404.7 113.6L403.7 111L405.7 104.7L405.9 102.5L405.4 99.4L405.6 96.1L404.3 91.8L403.1 89.6L401.5 85.5L399.5 83.2L398.3 79.7L398.3 77.3L399.3 74.1L400.6 71.5L400.2 68.5L399.3 63.5L399.5 59.8L397.5 55L395.5 53.2L394.1 51.1L391.7 48.4L387.9 48.3L384.9 47.7L380.5 44.7L377.6 42.5L371.2 39.2L368.4 37.5L365.1 37.3L361.1 38.2L358.5 38.3L356.6 37L354.5 34.5L353.7 31.2L353.9 28.5L353.4 25.5L351.6 23.1L346.6 20.8L343.6 20.6L340 20.1L336.3 20.4L334.3 21.8L331.8 24L328.8 24.7L324.7 23.7L319.9 23.5L317 23L313.5 21.7L311.3 20.1L308.5 18.6L305.6 17.7L303.1 16.3L300.7 16.2L296 12.7L291.9 12.6L288.1 13L285.4 13.8L281.8 14.3L276.3 14.9L272.8 17.4L271.3 19.4L270.4 23.4L270.4 25.8L268.6 29.2L266 32.3L263.1 31.8L259.7 28.8L257.2 28.6L254.9 30.3L254.3 33.2L251.2 33.6L248.2 33.8L248.9 36L252.8 37.2L257.1 37.4L260.7 38.1L263.2 41.1L265.3 42.1L269.5 42.5L271.7 41.9L276.9 43.5L279.6 43L282.8 41.4L285.5 40.9L288.4 40.1L291.2 39.2L293.6 40.2L295.5 42.5L297.3 45.9L299.1 50.4L301 52.9L302.3 54.7L304.9 56.8L309.7 58.3L312.7 58.5L314.9 59.6L317 61L319.8 62.9L321.6 64.3L322 68.3L321.2 70.6L318.6 75.4L317.1 77.5L314.1 78.8L311.9 79.4L307.9 79.4L305.2 79.2L303.5 81.3L302.6 83.9L302.4 87.6L303.3 92.5L305.9 96.7L308.8 99.7L310.7 102.9L310.3 105.9L308.1 107.4L302.7 108.6L300.7 109.7L298.2 112.7L297.8 115.6L301.1 117.4L303.9 120.1L303.8 124L301.7 126.5L299.4 128.2L296.8 129.3L294.6 130L291.5 129.9L288.1 131.9L286.7 133.6L286.2 136.5L287.9 142.1L288.2 144.5L288.4 147.1L291.8 150.9L293.4 153.8L292.5 157.9L287.9 155.4L284.8 154.5L278.6 154.5L276.9 156.1L274.9 159.1L272.3 161.5L269.9 163.2L267.5 165.1L264.4 167.9L262.7 171.4L261.2 173.5L259.8 177.2L259.1 179.4L259.4 182.4L260.3 184.7L260.5 189.3L258.8 192.2L256.9 193.9L251.3 195.2L249.1 196.8L246.6 200.2L243.8 201.8L241.2 202.8L237.9 202.5L230.9 203.4L228.1 204.2L223.4 206.1L216.9 206.7L214.7 209.7L211.2 212.6L209.2 213.8L206.9 215.5L201.2 219.3L198.7 219.8L197.3 221.6L194.2 223.7L193.3 228L194.2 230.6L195.9 235.8L196.4 239.4L196.4 241.7L196.2 244.1L196.1 248.3L197 256.4L197.1 261L194.5 265.3L193.8 267.7L192.3 270.8L188.9 274.8L186.6 278.3L183.4 282.2L181.7 284.1L177.8 288.3L175.9 290.6L174.2 292.5L173.5 298.2L173.8 301.2L174.6 303.6L176.2 306.8L177.4 308.8L178.4 311.7L180.7 314.8L183.9 316.6L187.2 319.5L190.6 321.9L192.8 324.4L195 326L197.1 327.1L200 328L201.3 330.5L199.5 333L199.2 335.9L199.3 338.7L199.8 341.2L199.7 343.7L199.3 346.4L197.5 350.4L198.2 354.3L198.2 358.5L197.4 361.7L195.4 363.7L194.7 367.3L194.9 370L194.2 374.3L193.5 376.6L191.7 379.4L189.6 383.9L188.8 387.5L188 389.8L187.3 393.4L186.3 397L183.6 400.8L178.9 402.6L174.3 408L173.3 410.8L171.7 417.4L171.5 420.5L170.4 423L167.4 425.2L165.4 427L164.5 429.3L163.1 431.3L161.8 434.3L160.9 436.5L158 440.4L154.5 444.9L152 449.7L150.1 451.8L148.7 454.3L146.3 455.1L142.9 455.2L137.8 456.4L135.9 458.3L131.9 461.9L129.4 464.3L126.2 469.1L124.8 471.2L122.9 472.7L119.8 475.9L118 479.3L117.5 482.3L115.5 486.2L113.8 488.6L112.5 491L111.5 494.1L106.6 498.2L104.2 501.5L101.8 501.5L99.9 504.9L98.6 507L95.7 508.5L94.2 511.4L93.6 514L94 518.6L92.4 521.9L90.5 524L88.7 528.5L87.7 530.9L88.2 533.9L89 537L89.6 539.4L87.9 541.5L87.5 545.3L85.7 547.2L83.8 548.9L83.6 551.8L82.4 554.9L82.4 557.1L81.1 559.5L78.6 562.3L76.6 565.4L76 568.9L74.7 571.6L74.4 574.2L73.4 576.5L71.2 578.6L69.8 580.8L68.7 583.6L68.5 586.3L67.1 588.7L65.5 593.6L65.2 596.1L64.3 598.4L61.2 600.5L58.1 603.4L56.6 606.5L53.6 610.3L52.9 612.9L53.9 615.2L54.8 619.7L54.4 622.2L52.9 624.8L52.3 627.7L50.9 631.7L49.9 635.3L49.2 638.5L46.9 641.3L43.9 642.9L43.3 646.5L42.4 649.8L42.9 653.2L40.3 653.9L39 657.1L38.4 661.9L36.5 665.1L35.9 667.5L33.3 667.8L31.2 670.8L28.5 673.6L30 676.1L30.8 679.6L31.5 682.5L32.4 684.8L31.2 687.2L30 689.2L28 691.1L26.3 695.3L26.6 698.2L28.9 700.4L28.8 702.7L26.7 704.3L25 706.4L25.5 708.8L26.5 710.9L26.8 714.9L26.8 717.7L27.5 719.8L27.8 722.7L26.5 725.2L24.2 727.6L22 730L21.2 732.9L21.8 737.2L22.4 740.5L22.2 743.6L21 746.7L20.4 749.2L17.4 751.3L16.2 754.2L15.5 758L13.6 760.7L13.8 764.2L12.3 767.1L12 770.1L12.3 774.8L12.8 777.4L12.4 780.2L14.1 783L15.9 784.7L18.4 784.7L20.6 784.7L21.9 789.3L21.3 794.2L20.1 798.1L16.7 800.2L14.9 802.3L14.9 805.3L16.1 807.2L16.9 811.4L18.7 815.7L18.6 818.1L21.1 818.8L23.5 820.4L24.1 823.4L21.9 824.8L22.4 828.8L22.1 831.1L19.1 834L18.9 836.4L18.5 839.4L19.2 841.5L20.9 842.9L20.5 845.7L20.4 847.9L20.5 851.7L19.5 853.8L19.5 857.8L19.2 861.2L22.3 861.4L22.9 864.6L25.1 867.5L23.9 870.1L23.7 873.5L23.6 876.8L25.1 879.3L25.5 882.9L26.7 886.8L26.1 890L23.9 889.6L23.4 892.2L22.3 894.8L21.5 899.2L20 901.2L18.6 903.7L20.9 905.5L18.2 906.6L16.2 908.6L16.9 912.6L22.2 912.9L23.4 915.1L23.2 918.5L25.3 920.2L24.8 922.5L25.7 926.8L27.5 928.6L25.9 931.5L26.2 933.9L28.5 931.6L31 931.4L29 933.6L32.8 936.7L35.5 936.6L38.1 936L39.5 938.8L41.2 937L42 934.8L42.7 932.6L41.6 929.5L43.7 928L42.7 925.6L44.2 923.9L43.3 921L45.2 919.7L48.3 919L48.4 916.6L48.5 914.3L50.1 912.7L50.6 910.2L53.7 908.9L54.3 906.2L56.6 904.3L57.6 901.4L59.1 899.3L61.6 897.1L63.9 894.4L66.7 892.8L69.1 892.6L73.2 889.6L75.8 888.7L78.1 887.3L79.8 885.9L81 883.9L83.4 882.7L81.4 885L80.5 887.7L78.4 890L76.1 891.1L74.6 893.2L74.3 896.9L73 899.2L74.8 901L77.2 903L74.8 904.3L73 905.7L71.1 907.1L72.1 910.3L69.5 912.7L68.9 915.4L66.5 917.4L65.1 920.7L66 923.4L64.5 925.2L63.9 928.5L63.4 931.7L64.8 934.5L66.3 936.3L68.9 936.6L71.4 937.8L73.5 940.3L75.8 941.8L78.2 942.8L81.5 942.7L86.4 944.3L89.6 944.5L91.6 945.6L94.7 946.7L97.5 947L100 947.7L102.9 948.4L106.2 950.7L109.5 950.9L111.1 952.6L135 965.9L155.1 977.1L175.3 988.4L178.8 986.1L178.7 983.3L178.2 979.3L177.9 975.8L177.1 972.9L178.5 970.6L176.9 968.5L178.1 965.7L179.2 963.2L182 960.1L183.8 956.9L185.9 954.3L185.8 952L187.1 949.2L189.2 947.2L189.9 944.5L190.9 941.6L194.1 940.9L195.8 939.4L199.6 935.8L201.1 933.8L202.7 931.6L205.1 930.3L206.7 935.8L209.6 937.1L210.4 939.9L208.7 942.4L210.3 944L213.1 944.6L215.3 943.8L218 945.5L218.8 947.6L221.4 949.1L233.4 933.6L235.4 932.6L237.5 934.5L238.2 936.7L240.4 936.8L241.2 939.2L243.6 940.6L245.9 942L248.9 945.2L250.8 947.9L251.2 951L251 953.7L252.7 955.8L256.7 954.8L258.8 955.9L261.4 956.9L262.4 960L264.3 961.8L266.6 962.7L267 965.5L267.4 967.9L269.6 970.6L268 972.9L268.3 975.8L269 978.6L268.5 983L266.8 984.5L267.6 988.7L266.9 991.8L268.6 993.9L270.5 992L272.1 989.3L272 984.8L272.2 980.2L275 978.8L276.7 972.3L279.2 972.1L281 973.8L281.3 977L281.7 979.6L281.9 982.5L282.4 985L283.1 987.2L283.8 989.6L286 989.8L290.1 988.2L292.3 987.4L294.1 985.5L296.4 984.8L298.4 983.2L300.7 983.9L303.3 982.1L305 980.5L308.3 979.3L310.1 976.8L312.3 976.1L314.8 976.5L316.6 973.9L320.9 974L319.5 977L318.8 980.7L318.2 983.6L319.3 985.7L319.5 987.9L318.3 990.8L319.5 992.7L323.8 991.4L326.2 990.9L328.6 990L328.9 987.8L329 985.3L331.7 985.2L334.4 986.6L336 989.1L338.2 988.7L340.3 989.8L341.4 991.8L344.7 992.3L347.1 990.7L349.4 992L351.6 994.2L354.6 993.4L359 993.1L360.8 994.7L376.1 1012L377.1 1008.8L379 1007.2L379.8 1004.6L381.1 1002.6L382.7 1000.9L379.6 997.6L378.9 994.5L378.6 991.1L379 988.8L380.9 987.4L380.1 984.8L379.1 982L377.9 979.3L379.1 977.1L379.1 974.2L380.1 970.1L383.5 968.1L385.6 968.9L389.3 969.7L389.3 972.9L389.7 977.3L392.6 978.7L394.9 977.6L399.3 977.6L398.9 981.1L401.6 983L404.6 982.5L403.3 984.8L405 987.7L405.5 990.4L407.3 988.2L409.4 987.1L410.5 984.7L412.9 983.2L414.6 984.9L418 986L421.8 985.5L423.5 987.5L425.2 985.2L427.1 982.6L428.2 980.4L430.2 978.9L433.5 978.9L436.1 979L437.2 981L441 979.8L441.2 977L443.4 976.7L446 976.5L448.5 974.7L451.2 974.5L453.3 973.5L455.7 972.6L456.8 970.2L459.4 971.4L462.5 968.9L465.5 966.7L467.5 963.9L469.5 962.1L472.8 963.9L474.2 962.2L475.7 960L477.3 957.7L479.1 955.7L486.6 951.9L500.3 952L521.8 952.1L522.8 947.9L526.1 934.2L528.5 937.7L531.3 938.7L532 940.9L532.4 943.2L532.2 946.5L531.5 949L531.9 952.4L535.9 953.6L539.6 953L542.9 952.1L545.5 951.4L548.5 950.5L552.2 950.4L554.6 948.3L557.1 947.6L559.8 947.1L562.4 945.7L559.8 946.4L556.9 947.2L554 947.6L552.1 949.2L549.5 949.6L547.2 949.3L544.3 948.3L542.2 949.2L537.8 950.3L539.2 948.6L538.7 945.7L541.2 943.6L540.6 939.8L543.1 936.3L543.3 933.4L540.1 931.3L540.8 928.3L541 925.5L543.1 924.3L543.5 922.1L541 920.4L539.8 917.6L542.9 916.1L544 913.5L541.3 912L541.2 909.2L543 906.7L540.5 904.5L543.5 903.8L543.7 901.5L545.7 900.3L549.1 898.8L550.8 897.4L548.1 895.9L544.9 896.8L544.2 893.3L543.9 890.2L542.4 888.2L542.6 885.9L539.7 886.3L538.6 889.1L537.3 891.1L535.3 889.6L536.5 886.4L537.5 884L540.5 881L539.3 878.9L536.8 878.1L534.8 879.2L533.2 877.5L533.3 874.2L534.3 871.1L532.1 871L530 868.9L531.2 866.4L531.9 863L530.9 860.8L529.3 858.5L529.1 855.7L530.4 852.5L531.6 850L531.7 847.1L528.5 845.9L530 841.6L526.6 840.9L522.2 841.6L518.9 841L521 839.4L523.7 838.9L525.7 837.2L528 837.1L529.7 835.6L531.8 834.1L533.8 832.4L535.8 829.6L538.2 828.2L540.5 827.6L543 827.4L546.8 827.7L551.1 825.8L554.4 823.9L551.6 824L548.4 825L545.1 824.5L542.8 824.9L540.5 824.8L537.5 824L534.3 821.5L532.1 821.7L530.6 819.1L531.1 816.6L533.3 815.9L533.6 813.6L535.7 812.6L535.7 810.3L536.7 807.8L533.4 807.9L530.9 805.6L532.5 804L535.1 803.5L536.8 801.4L538 798.6L538.6 796.3L535.7 795.1L535.6 792L533 790.8L530 792.4L530.1 790.1L532.2 789.3L534.7 789.2L536.8 788L539.3 787.8L541.7 788.8L546.8 787.6L548.9 791.3L551.3 791.7L554.9 792.5L557.4 793L558.6 789.8L560.9 789.4L563.1 790L566.2 789.8L563.4 787.9L550.9 785.1L546 779.3L537.3 776.5L534.2 775.6L523.6 777.4L513.5 770.5L513.1 763.3L512.6 760L509.2 759.4L507.2 758.2L507.3 755.8L510.1 746.6L515.2 738.8L520.4 730.7L535.2 707.3L544 706.8L544.8 692L547.5 689.4L551.3 690.3L552.9 683.6L556.2 681.2L557.9 677.5L557.8 675.1L558 670.8L560.6 668.9L563.1 668.1L566.3 667.2L568.6 666.4L578.8 660.6L584.2 657L591.2 654.8L597.1 649.3L599.8 633.1L608.3 631.8L611.6 625.3L611.2 615.7L608.7 612.9L607.3 614.9L608.2 618.6L607.4 621.7L604.3 624.3L600.3 626.4L596.7 625.8L594.2 625.2L591.6 624.7L588.1 626L586.6 629.4L585.8 631.8L589.2 635.2L586.8 637.5L583.8 638.7L580.5 638L578 635.7L577.9 633.4L575.7 630.5L573.1 628.6L573.2 626.4L574.3 624.3L573.7 620.5L573.1 617.1L571.2 615.4L568.9 616.5L564.8 619.4L560.3 619L556.4 619.9L554 617.4L551.8 615.1L548.1 614.9L543.9 616L539.5 615.5L537.2 616.2L534.4 615L532.1 614.5L530.8 609.8L528.3 606.9L526.6 604.6L522.9 603.5L521.4 599.6L521.5 596.3L519.1 592.9L519.1 589L520.4 586.6L518.9 584.5L519.8 581.8L519.6 579.4L517.4 578.5L518.2 576.4L517 573.2L515.3 571.2L512.1 571.1L508.9 571.3L506.9 569.6L508.1 566.4L504.9 563.7L501.7 564L499.2 562.8L499.1 560.4L498.1 557.2L502.9 553.9L503.8 551.5L505 547.7L505.4 544.4L509 542.7L511.7 541.1L509.6 538.8L507.5 536.4L509.2 533.2L507.6 531.2L505.3 531.9L502.9 529.7L499.7 528.8L498.6 526.7L499.5 524L496.6 520.9L493.3 521.6L489.8 521.4L487.7 523.3L485 522.9L485.6 520.2L484.7 518L482.6 515.9L480.8 514.5L479.4 511.4L476.5 510.8L475.1 508.9L476.9 506L477.3 502.6L477.6 500.3L478 497.6L474.7 496.8L475 493.9L473.4 491.3L470.1 490.8L469.3 488.4L467.2 489.8L465 489.1L465.2 486.4L465.1 484L467.4 483.6L466.2 481.7L464 481.3L461 483.1L458.5 482.7L456 483.6L452.8 482L450.3 481.7L450.7 478.3L450.8 475.5L452.4 473.7L454.4 472.2L455.3 469.4L455.6 467.2L457.5 465.3L460.4 463.3L458.6 460.2L459.5 457.7L462.9 458L466.7 456.4L467.9 453L468.1 448.9L468.2 446.6L466.7 443.7L466.8 440.3L468.3 437.6L470.4 435.9L469.2 433.2L466.9 431.3L467.9 427.8L469.1 425.6L470.1 422.7L471.7 420.1L473.6 418.9L474.7 416.5L475.1 412.6L474.9 410.4L477 409.7L480.6 407.9L481.2 404.8L480.4 402.1L482.4 400.8L482.3 398.3L485.5 398.7L488.2 398.9L491.1 396.7L494.1 394.7L497.1 393.5L499.1 392.1L502.5 392.5L505.2 392.6L509.4 392L512.6 389.1L515.4 385.6L515.5 382.9L515.9 379.9L517.7 378.1L515.1 375L515.5 372L516.2 369.3L517.5 367.3L518.4 364.1L520.4 361.9L519.3 359.9L519.2 354.9L518.1 352.8L516.6 350.7L515.1 349L512.4 347.5L510 346.4L507.2 343.1L503.9 340.7L500.7 341.1L498.5 342.3L494.9 342.9L491.7 342.3L489.8 343.7L487.1 344.4L485 345.8L482.1 346.8L479.9 347.3L477.2 348.6L473.6 348.4L470.8 348.9L469 351.6L466.2 351.3L463.9 352.9L462 355.2L460.9 357.2L459.1 359.2L457.3 361.1L455.2 360.2L451.5 359.5L449.8 356.5L449.5 353.7L447 351.7L444.2 349.6L444.3 347.4L441.9 344L439.6 342.8L438.2 340.3L436.5 338.3L435.4 336.2L433.3 335L431.4 333.4L428.3 330.7L428.3 328.4L426.6 325.2L425.9 322.3L424.2 320.7L420.6 321.2L419.3 319.1L420 316.8L417.5 315.3L416.9 312.7L419.4 312.4L416.8 309.3L415.1 307.6L412.5 307.6L415 310L413.4 311.6L410.9 310.4L411.3 307.3L411.4 304.9L409 303.6L409.3 301.1L406.9 300.5L404.6 299.5L406.4 297.5L404.7 295.4L402 295.2L400.5 297L399.9 292.2L397.9 290.7L397.6 287.3L394.2 284.9L391.1 285.9L387.4 286.3L387.4 283.8L390.4 281.4L395.3 279.7L398.3 278L400 274.4L399.5 271.5L397.5 268.1L394.6 266.1L392.4 264.7L389.3 264.7L386.5 264.5L382.4 268.9L380.2 269.5L378.5 267.5L377 264.9L375.6 262.2L372.7 260.2L369.2 258.8L367.8 256.2L367.8 253.5L370.5 250.4L374.4 249.2L376.6 250.5L380.3 250L382.3 247.3L383.4 243.7L385.9 240.3L388.6 238.7L390.6 236.4L392.7 232.9L393.9 230.3L393.9 226.2L396.6 221.5L396.9 218.8L395 213.5L395.5 207.4L397.7 204.2L397.8 199.7L397.9 196.2L397.6 193.1L399.4 190.2L400.5 187.8L401.9 184.7L401.6 182.3L402.3 179.3L402.6 177.1L405.3 173L407.4 170.5L406.8 168.2L405.4 165.2Z"/>
+
+                        <!-- Sede: cruz de eixo, não numerada -->
+                        <g class="marcador-sede" transform="translate(319.9 620.7)">
+                            <title>Sede da EngPalmas — Palmas / TO</title>
+                            <path class="eixo" d="M-17 0h34M0 -17v34"/>
+                            <circle r="6"/>
+                        </g>
+
+                        <a class="marcador cat-jud" href="obra-natividade.html" transform="translate(379.8 810.8)">
+                            <title>1 — Fórum de Natividade · Judiciário · Natividade / TO</title>
+                            <circle class="disco" r="20"/>
+                            <text class="num" y="8">1</text>
+                        </a>
+
+                        <a class="marcador cat-jud" href="obra-goiatins.html" transform="translate(399.7 364.5)">
+                            <title>2 — Fórum de Goiatins · Judiciário · Goiatins / TO</title>
+                            <circle class="disco" r="20"/>
+                            <text class="num" y="8">2</text>
+                        </a>
+
+                        <a class="marcador cat-edu" href="obra-cem-felix-camoa.html" transform="translate(279 659.6)">
+                            <title>3 — CEM Félix Camoa · Educação · Porto Nacional / TO</title>
+                            <circle class="disco" r="20"/>
+                            <text class="num" y="8">3</text>
+                        </a>
+
+                        <a class="marcador cat-ilu" href="obra-iluminacao-miranorte.html" transform="translate(256.7 523.8)">
+                            <title>5 — Iluminação Pública de Miranorte · Miranorte / TO</title>
+                            <circle class="disco" r="20"/>
+                            <text class="num" y="8">5</text>
+                        </a>
+
+                        <a class="marcador cat-ilu" href="obra-iluminacao-monte-do-carmo.html" transform="translate(336 684.2)">
+                            <title>6 — Iluminação Pública de Monte do Carmo · Monte do Carmo / TO</title>
+                            <circle class="disco" r="20"/>
+                            <text class="num" y="8">6</text>
+                        </a>
+
+                        <a class="marcador cat-ilu" href="obra-iluminacao-nova-rosalandia.html" transform="translate(222.3 660.4)">
+                            <title>7 — Iluminação Pública de Nova Rosalândia · Nova Rosalândia / TO</title>
+                            <circle class="disco" r="20"/>
+                            <text class="num" y="8">7</text>
+                        </a>
+
+                        <a class="marcador cat-out" href="obra-ananas.html" transform="translate(315.8 140.2)">
+                            <title>8 — Obra de Ananás · Ananás / TO</title>
+                            <circle class="disco" r="20"/>
+                            <text class="num" y="8">8</text>
+                        </a>
+                    </svg>
+                    <figcaption>Contorno e posições a partir da malha territorial do IBGE. Cada marcador indica o município, no centroide de seu território.</figcaption>
+                </figure>
+
+                <div class="atuacao-lista">
+                    <h3 class="titulo-lista-municipios">Municípios atendidos</h3>
+
+                    <ol class="lista-municipios">
+                        <li>
+                            <span class="num-municipio cat-jud">1</span>
+                            <span class="dados-municipio">
+                                <a href="obra-natividade.html">Fórum de Natividade</a>
+                                <span class="meta-municipio">Natividade / TO · Judiciário</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="num-municipio cat-jud">2</span>
+                            <span class="dados-municipio">
+                                <a href="obra-goiatins.html">Fórum de Goiatins</a>
+                                <span class="meta-municipio">Goiatins / TO · Judiciário</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="num-municipio cat-edu">3</span>
+                            <span class="dados-municipio">
+                                <a href="obra-cem-felix-camoa.html">CEM Félix Camoa</a>
+                                <span class="meta-municipio">Porto Nacional / TO · Educação</span>
+                            </span>
+                        </li>
+                        <li class="sem-marcador">
+                            <span class="num-municipio cat-edu">4</span>
+                            <span class="dados-municipio">
+                                <a href="obra-escola-henrique-cirqueira.html">Escola Estadual Henrique Cirqueira Amori</a>
+                                <span class="meta-municipio">Educação · <span class="pendente">[[PREENCHER: cidade-henrique-cirqueira]]</span></span>
+                                <span class="aviso-municipio">Sem marcador no mapa: município ainda não informado.</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="num-municipio cat-ilu">5</span>
+                            <span class="dados-municipio">
+                                <a href="obra-iluminacao-miranorte.html">Iluminação Pública de Miranorte</a>
+                                <span class="meta-municipio">Miranorte / TO · Iluminação Pública</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="num-municipio cat-ilu">6</span>
+                            <span class="dados-municipio">
+                                <a href="obra-iluminacao-monte-do-carmo.html">Iluminação Pública de Monte do Carmo</a>
+                                <span class="meta-municipio">Monte do Carmo / TO · Iluminação Pública</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="num-municipio cat-ilu">7</span>
+                            <span class="dados-municipio">
+                                <a href="obra-iluminacao-nova-rosalandia.html">Iluminação Pública de Nova Rosalândia</a>
+                                <span class="meta-municipio">Nova Rosalândia / TO · Iluminação Pública</span>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="num-municipio cat-out">8</span>
+                            <span class="dados-municipio">
+                                <a href="obra-ananas.html">Obra de Ananás</a>
+                                <span class="meta-municipio">Ananás / TO · <span class="pendente">[[PREENCHER: categoria-ananas]]</span></span>
+                            </span>
+                        </li>
+                    </ol>
+
+                    <p class="nota-sede"><span class="marca-sede" aria-hidden="true"></span> Sede da empresa em Palmas / TO.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divisor-fita-container">
+            <div class="fita-linha"></div>
+            <img src="logoENG.png" alt="" class="divisor-logo-center" width="500" height="500" loading="lazy" decoding="async">
+            <div class="fita-linha"></div>
+        </div>
+
+        <!-- ================================================================
+             6. CAPACIDADE TÉCNICA
              ================================================================ -->
         <section id="capacidade" class="secao-capacidade scroll-hidden">
             <h2 class="section-title">Capacidade <span>Técnica</span></h2>
@@ -582,7 +885,105 @@
         }
 
         /* ---------------------------------------------------------------
-           4. Revelação das seções ao rolar
+           4. Filtro de categoria no portfólio
+           --------------------------------------------------------------- */
+        var filtro = document.getElementById('filtro-obras');
+        var grupos = document.querySelectorAll('.grupo-obras');
+        var statusFiltro = document.querySelector('.status-filtro');
+
+        if (filtro && grupos.length) {
+            filtro.addEventListener('click', function (evento) {
+                var botao = evento.target.closest('.btn-filtro');
+                if (!botao) { return; }
+
+                var alvo = botao.getAttribute('data-filtro');
+
+                Array.prototype.forEach.call(filtro.querySelectorAll('.btn-filtro'), function (b) {
+                    var ativo = (b === botao);
+                    b.classList.toggle('ativo', ativo);
+                    b.setAttribute('aria-pressed', ativo ? 'true' : 'false');
+                });
+
+                var visiveis = 0;
+                Array.prototype.forEach.call(grupos, function (grupo) {
+                    var mostra = (alvo === 'todas' || grupo.getAttribute('data-categoria') === alvo);
+                    grupo.hidden = !mostra;
+                    if (mostra) { visiveis += grupo.querySelectorAll('.link-obra').length; }
+                });
+
+                // Leitor de tela precisa saber que a lista mudou.
+                if (statusFiltro) {
+                    statusFiltro.textContent = visiveis === 1
+                        ? '1 obra exibida.'
+                        : visiveis + ' obras exibidas.';
+                }
+            });
+        }
+
+        /* ---------------------------------------------------------------
+           5. Contadores da Capacidade Técnica
+           Só anima o que já é número. Enquanto o valor for placeholder,
+           o card fica intocado.
+           --------------------------------------------------------------- */
+        var semMovimento = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function animarContador(elemento, prefixo, valor, sufixo, casas) {
+            var duracao = 1400;
+            var inicio = null;
+
+            function formatar(n) {
+                return prefixo + n.toLocaleString('pt-BR', {
+                    minimumFractionDigits: casas,
+                    maximumFractionDigits: casas
+                }) + sufixo;
+            }
+
+            function passo(agora) {
+                if (inicio === null) { inicio = agora; }
+                var t = Math.min((agora - inicio) / duracao, 1);
+                // Desaceleração no final, sem biblioteca.
+                var suave = 1 - Math.pow(1 - t, 3);
+                elemento.textContent = formatar(valor * suave);
+                if (t < 1) { requestAnimationFrame(passo); }
+                else { elemento.textContent = formatar(valor); }
+            }
+
+            requestAnimationFrame(passo);
+        }
+
+        var numeros = document.querySelectorAll('.card-capacidade .numero');
+
+        if (numeros.length && 'IntersectionObserver' in window) {
+            var obsNumeros = new IntersectionObserver(function (entradas, obs) {
+                entradas.forEach(function (entrada) {
+                    if (!entrada.isIntersecting) { return; }
+                    obs.unobserve(entrada.target);
+
+                    var el = entrada.target;
+                    // Placeholder por preencher: não é número, não anima.
+                    if (el.querySelector('.pendente')) { return; }
+
+                    var texto = el.textContent.trim();
+                    var m = texto.match(/^(\D*?)([\d.]+(?:,\d+)?)(\D*)$/);
+                    if (!m) { return; }
+
+                    // Formato pt-BR: ponto é milhar, vírgula é decimal.
+                    var bruto = m[2].replace(/\./g, '').replace(',', '.');
+                    var valor = parseFloat(bruto);
+                    if (!isFinite(valor)) { return; }
+
+                    var casas = (m[2].indexOf(',') !== -1) ? m[2].split(',')[1].length : 0;
+
+                    if (semMovimento) { return; }
+                    animarContador(el, m[1], valor, m[3], casas);
+                });
+            }, { threshold: 0.4 });
+
+            Array.prototype.forEach.call(numeros, function (n) { obsNumeros.observe(n); });
+        }
+
+        /* ---------------------------------------------------------------
+           6. Revelação das seções ao rolar
            --------------------------------------------------------------- */
         var elementos = document.querySelectorAll('.scroll-hidden');
 

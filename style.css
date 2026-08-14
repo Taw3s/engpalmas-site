@@ -13,15 +13,16 @@
      09. A Empresa (ficha institucional)
      10. Obras (grade e cards)
      11. Especialidades
-     12. Capacidade técnica
-     13. Localização e mapa
-     14. Rodapé
-     15. Páginas de detalhe de obra (+ ficha técnica)
-     16. Modal de contato
-     17. Botão flutuante do WhatsApp
-     18. Animações
-     19. Barra de rolagem
-     20. Preferência por movimento reduzido
+     12. Área de atuação (mapa do Tocantins)
+     13. Capacidade técnica
+     14. Localização e mapa
+     15. Rodapé
+     16. Páginas de detalhe de obra (+ ficha técnica)
+     17. Modal de contato
+     18. Botão flutuante do WhatsApp
+     19. Animações
+     20. Barra de rolagem
+     21. Preferência por movimento reduzido
    ========================================================================== */
 
 
@@ -632,6 +633,115 @@ nav ul li a[aria-current="page"] {
     text-align: center;
 }
 
+.obras-resumo {
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--light-grey);
+    font-size: 1.05rem;
+}
+
+/* --- Filtro de categoria --------------------------------------------------
+   Escondido por padrão: só aparece quando há JavaScript para fazê-lo
+   funcionar. Sem JS, todos os grupos ficam visíveis. */
+
+.filtro-obras {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto 10px;
+}
+
+html.js .filtro-obras {
+    display: flex;
+}
+
+.btn-filtro {
+    background-color: transparent;
+    color: var(--light-grey);
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 9px 16px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.btn-filtro:hover {
+    color: var(--white-text);
+    border-color: var(--orange-brand);
+}
+
+.btn-filtro .qtd {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #8a8a8a;
+    background-color: #161616;
+    border-radius: 10px;
+    padding: 1px 7px;
+}
+
+/* Estado ativo: preenchido, para não depender só de cor de texto. */
+.btn-filtro.ativo {
+    background-color: var(--orange-btn);
+    border-color: var(--orange-btn);
+    color: #fff;
+}
+
+.btn-filtro.ativo .qtd {
+    background-color: rgba(0, 0, 0, 0.28);
+    color: #fff;
+}
+
+.grupo-obras[hidden] {
+    display: none;
+}
+
+/* --- Agrupamento por categoria ------------------------------------------- */
+
+.grupo-obras {
+    margin-top: 45px;
+}
+
+.titulo-categoria {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--white-text);
+    text-align: left;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #262626;
+}
+
+.icone-categoria-titulo {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    color: var(--orange-brand);
+}
+
+/* Contagem empurrada para a direita: dá densidade de informação sem
+   competir com o nome da categoria. */
+.contagem-categoria {
+    margin-left: auto;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--light-grey);
+    text-transform: none;
+    white-space: nowrap;
+}
+
 .portfolio-grid {
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -690,11 +800,13 @@ nav ul li a[aria-current="page"] {
     text-align: left;
 }
 
-.obra-info h3 {
-    font-size: 1.25rem;
+/* h4 porque agora existe o h3 do título da categoria acima. */
+.obra-info h4 {
+    font-size: 1.15rem;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    line-height: 1.25;
 }
 
 .obra-info .obra-local {
@@ -753,7 +865,9 @@ nav ul li a[aria-current="page"] {
     overflow-wrap: anywhere;
 }
 
-/* Placeholder para obras que ainda não têm foto disponível. */
+/* Placeholder para obras que ainda não têm foto disponível.
+   O ícone identifica a categoria, em vez de repetir o logo em todos
+   os cards sem foto. */
 .obra-sem-foto {
     width: 100%;
     height: 100%;
@@ -761,7 +875,9 @@ nav ul li a[aria-current="page"] {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 14px;
+    gap: 10px;
+    padding: 20px;
+    text-align: center;
     background: repeating-linear-gradient(
         135deg,
         #141414,
@@ -772,17 +888,32 @@ nav ul li a[aria-current="page"] {
 }
 
 .obra-sem-foto img {
-    height: 64px;
-    width: 64px;
+    height: 56px;
+    width: 56px;
     object-fit: contain;
     opacity: 0.5;
 }
 
-.obra-sem-foto span {
-    font-size: 0.8rem;
+.icone-categoria {
+    width: 62px;
+    height: 62px;
+    color: var(--orange-brand);
+    opacity: 0.75;
+}
+
+.rotulo-sem-foto {
+    font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
+    color: var(--white-text);
+    line-height: 1.4;
+}
+
+.rotulo-sem-foto.secundario {
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
     color: var(--light-grey);
 }
 
@@ -817,9 +948,9 @@ nav ul li a[aria-current="page"] {
 .lista-especialidades {
     list-style: none;
     display: grid;
-    /* 200px permite as 4 colunas caberem nos 900px do container: antes,
-       com 220px, a quarta quebrava para uma segunda linha (layout 3+1). */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* São 5 especialidades. Com colunas estreitas o layout cairia em 4+1,
+       desequilibrado; 260px força 3 colunas e produz um 3+2 simétrico. */
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     /* Iguala a altura de TODAS as linhas, não só das células de uma
        mesma linha — os cards ficam idênticos mesmo quando o grid quebra. */
     grid-auto-rows: 1fr;
@@ -869,7 +1000,251 @@ nav ul li a[aria-current="page"] {
 
 
 /* ==========================================================================
-   12. CAPACIDADE TÉCNICA
+   12. ÁREA DE ATUAÇÃO (MAPA DO TOCANTINS)
+   --------------------------------------------------------------------------
+   Contorno e centroides vêm da malha territorial oficial do IBGE.
+   Os marcadores são numerados e a legenda ao lado traz os nomes: quatro
+   dos municípios ficam a menos de 100 unidades um do outro no mapa, e
+   rótulos de texto sobre eles se sobreporiam.
+   ========================================================================== */
+
+.secao-atuacao {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.atuacao-resumo {
+    max-width: 760px;
+    margin: 0 auto 45px;
+    color: var(--light-grey);
+    font-size: 1.05rem;
+}
+
+.atuacao-layout {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(220px, 340px) 1fr;
+    gap: 45px;
+    align-items: start;
+    text-align: left;
+}
+
+@media (max-width: 860px) {
+    .atuacao-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        justify-items: center;
+    }
+
+    .mapa-figura {
+        max-width: 300px;
+    }
+}
+
+/* --- O mapa --------------------------------------------------------------- */
+
+.mapa-figura {
+    margin: 0;
+    width: 100%;
+}
+
+.mapa-to {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.mapa-contorno {
+    fill: #131313;
+    stroke: #3d3d3d;
+    stroke-width: 2;
+    stroke-linejoin: round;
+}
+
+.mapa-figura figcaption {
+    margin-top: 14px;
+    font-size: 0.74rem;
+    line-height: 1.5;
+    color: #9a9a9a;
+}
+
+/* Sede: cruz de eixo, linguagem de desenho técnico. */
+.marcador-sede circle {
+    fill: var(--white-text);
+}
+
+.marcador-sede .eixo {
+    stroke: var(--white-text);
+    stroke-width: 2.5;
+}
+
+/* --- Marcadores ----------------------------------------------------------- */
+
+.marcador {
+    cursor: pointer;
+}
+
+.marcador .disco {
+    stroke-width: 2.5;
+    transition: stroke-width 0.2s ease, opacity 0.2s ease;
+}
+
+.marcador .num {
+    text-anchor: middle;
+    font-size: 22px;
+    font-weight: 900;
+    pointer-events: none;
+}
+
+.marcador:hover .disco,
+.marcador:focus-visible .disco {
+    stroke-width: 8;
+}
+
+.marcador:focus-visible {
+    outline: none;
+}
+
+.marcador:focus-visible .disco {
+    stroke: var(--white-text);
+}
+
+/* Cores por categoria. Todas as combinações passam em AA:
+   branco sobre #C43F00 = 5,2:1 · preto sobre #E8E8E8 = 17,4:1
+   #FF5700 sobre #0a0a0a = 6,2:1 · #cccccc sobre #2a2a2a = 8,9:1 */
+
+.cat-jud .disco { fill: var(--orange-btn); stroke: var(--orange-btn); }
+.cat-jud .num   { fill: #fff; }
+
+.cat-edu .disco { fill: #E8E8E8; stroke: var(--orange-brand); }
+.cat-edu .num   { fill: #0a0a0a; }
+
+.cat-ilu .disco { fill: #0a0a0a; stroke: var(--orange-brand); }
+.cat-ilu .num   { fill: var(--orange-brand); }
+
+.cat-out .disco { fill: #2a2a2a; stroke: #7a7a7a; stroke-dasharray: 5 4; }
+.cat-out .num   { fill: var(--light-grey); }
+
+/* --- Legenda / lista de municípios ---------------------------------------- */
+
+.titulo-lista-municipios {
+    font-size: 0.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--light-grey);
+    padding-bottom: 12px;
+    border-bottom: 1px solid #262626;
+    margin-bottom: 6px;
+}
+
+/* min-width evita que nomes longos de obra estourem a coluna do grid. */
+.atuacao-lista {
+    min-width: 0;
+}
+
+.lista-municipios {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Obra sem marcador no mapa, por falta do município. */
+.lista-municipios li.sem-marcador {
+    opacity: 0.75;
+}
+
+.lista-municipios li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid #1e1e1e;
+}
+
+/* Mesma identidade visual dos marcadores do mapa: o número liga os dois. */
+.num-municipio {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 900;
+    border: 2px solid transparent;
+}
+
+.num-municipio.cat-jud { background-color: var(--orange-btn); color: #fff; }
+.num-municipio.cat-edu { background-color: #E8E8E8; color: #0a0a0a; border-color: var(--orange-brand); }
+.num-municipio.cat-ilu { background-color: #0a0a0a; color: var(--orange-brand); border-color: var(--orange-brand); }
+.num-municipio.cat-out { background-color: #2a2a2a; color: var(--light-grey); border-color: #7a7a7a; border-style: dashed; }
+
+.dados-municipio {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.dados-municipio a {
+    color: var(--white-text);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    transition: color 0.3s;
+}
+
+.dados-municipio a:hover {
+    color: var(--orange-brand);
+    text-decoration: underline;
+}
+
+.meta-municipio {
+    font-size: 0.78rem;
+    color: var(--light-grey);
+}
+
+.aviso-municipio {
+    font-size: 0.72rem;
+    color: #9a9a9a;
+    font-style: italic;
+}
+
+.nota-sede {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 18px;
+    font-size: 0.78rem;
+    color: var(--light-grey);
+}
+
+/* Reproduz a cruz de eixo da sede em miniatura. */
+.marca-sede {
+    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
+    position: relative;
+}
+
+.marca-sede::before,
+.marca-sede::after {
+    content: '';
+    position: absolute;
+    background-color: var(--white-text);
+}
+
+.marca-sede::before { left: 0; right: 0; top: 6px; height: 2px; }
+.marca-sede::after  { top: 0; bottom: 0; left: 6px; width: 2px; }
+
+
+/* ==========================================================================
+   13. CAPACIDADE TÉCNICA
    ========================================================================== */
 
 .secao-capacidade {
@@ -943,7 +1318,7 @@ nav ul li a[aria-current="page"] {
 
 
 /* ==========================================================================
-   13. LOCALIZAÇÃO E MAPA
+   14. LOCALIZAÇÃO E MAPA
    ========================================================================== */
 
 .secao-localizacao {
@@ -984,7 +1359,7 @@ nav ul li a[aria-current="page"] {
 
 
 /* ==========================================================================
-   14. RODAPÉ
+   15. RODAPÉ
    ========================================================================== */
 
 footer {
@@ -1024,7 +1399,7 @@ footer {
 
 
 /* ==========================================================================
-   15. PÁGINAS DE DETALHE DE OBRA
+   16. PÁGINAS DE DETALHE DE OBRA
    ========================================================================== */
 
 .pagina-detalhes {
@@ -1263,6 +1638,12 @@ footer {
     opacity: 0.5;
 }
 
+.imagem-obra-pendente .icone-categoria {
+    width: 110px;
+    height: 110px;
+    opacity: 0.7;
+}
+
 .imagem-obra-pendente span {
     font-size: 0.82rem;
     font-weight: 700;
@@ -1326,7 +1707,7 @@ footer {
 
 
 /* ==========================================================================
-   16. MODAL DE CONTATO
+   17. MODAL DE CONTATO
    ========================================================================== */
 
 .modal-overlay {
@@ -1468,7 +1849,7 @@ footer {
 
 
 /* ==========================================================================
-   17. BOTÃO FLUTUANTE DO WHATSAPP
+   18. BOTÃO FLUTUANTE DO WHATSAPP
    ========================================================================== */
 
 .whatsapp-float {
@@ -1516,7 +1897,7 @@ footer {
 
 
 /* ==========================================================================
-   18. ANIMAÇÕES
+   19. ANIMAÇÕES
    ========================================================================== */
 
 @keyframes fadeInUp {
@@ -1580,7 +1961,7 @@ html.js .scroll-hidden.aparecer {
 
 
 /* ==========================================================================
-   19. BARRA DE ROLAGEM
+   20. BARRA DE ROLAGEM
    ========================================================================== */
 
 ::-webkit-scrollbar {
@@ -1603,7 +1984,7 @@ html.js .scroll-hidden.aparecer {
 
 
 /* ==========================================================================
-   20. PREFERÊNCIA POR MOVIMENTO REDUZIDO
+   21. PREFERÊNCIA POR MOVIMENTO REDUZIDO
    ========================================================================== */
 
 @media (prefers-reduced-motion: reduce) {

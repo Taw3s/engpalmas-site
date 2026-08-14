@@ -6,7 +6,11 @@ decidido ou conseguido antes de publicar.
 
 **Nada neste site foi inventado.** Todo dado que não foi informado aparece
 na tela como um marcador laranja tracejado no formato `[[PREENCHER: chave]]`.
-São **67 ocorrências** de **39 chaves distintas**, distribuídas nas 5 páginas.
+São **131 ocorrências** de **76 chaves distintas**, distribuídas nas 9 páginas.
+
+> O salto de 67 para 131 é da Fase 7: o portfólio passou de 4 para 8 obras.
+> Cada obra nova traz uma ficha técnica inteira em aberto. **Isso não é
+> regressão** — são obras reais que antes nem apareciam no site.
 
 Para localizar todos de uma vez, rode na pasta do projeto:
 
@@ -112,52 +116,133 @@ abrigada de 34,5 kV · Situação: Concluída.
 Já preenchidos (**confirmar**): Local: Goiatins / TO · Escopo: obra civil e
 elétrica integrada, baixa e média tensão · Situação: Concluída.
 
-### Obra de Ananás — `obra-ananas.html` *(página nova)*
+## 🟠 EDUCAÇÃO — 2 obras *(páginas novas, Fase 7)*
 
-Não havia nenhuma informação sobre esta obra no projeto. Tudo em aberto:
+### CEM Félix Camoa — `obra-cem-felix-camoa.html`
 
-- [ ] `descricao-obra-ananas` — o parágrafo descritivo da página
+Confirmados: nome da obra e cidade (**Porto Nacional / TO**). O resto:
+
+- [ ] `descricao-felix-camoa` — parágrafo descritivo da página
+- [ ] `orgao-contratante-felix-camoa`
+- [ ] `objeto-contrato-felix-camoa`
+- [ ] `modalidade-felix-camoa`
+- [ ] `area-felix-camoa`
+- [ ] `prazo-felix-camoa`
+- [ ] `escopo-felix-camoa`
+- [ ] `situacao-felix-camoa`
+
+### Escola Estadual Henrique Cirqueira Amori — `obra-escola-henrique-cirqueira.html`
+
+- [ ] `nome-completo-henrique-cirqueira` — **o nome pode estar truncado.**
+      Confirmar a grafia oficial completa. Aparece no `<h1>`, no `<title>`,
+      no card da home e na ficha.
+- [ ] `cidade-henrique-cirqueira` — **desconhecida.** Aparece no card da
+      home e na ficha.
+- [ ] `descricao-henrique-cirqueira`
+- [ ] `orgao-contratante-henrique-cirqueira`
+- [ ] `objeto-contrato-henrique-cirqueira`
+- [ ] `modalidade-henrique-cirqueira`
+- [ ] `area-henrique-cirqueira`
+- [ ] `prazo-henrique-cirqueira`
+- [ ] `escopo-henrique-cirqueira`
+- [ ] `situacao-henrique-cirqueira`
+
+---
+
+## 🟠 ILUMINAÇÃO PÚBLICA — 3 obras *(páginas novas, Fase 7)*
+
+Confirmados em todas: nome da obra e município. O resto está em aberto.
+
+**Estas três fichas não têm "Área construída"** — não se aplica a obra de
+iluminação. No lugar entram **`pontos-*`** (pontos instalados) e
+**`extensao-*`** (extensão de via atendida), que são as métricas que
+constam de atestado desse tipo de contrato. Os outros 5 campos de atestado
+permanecem iguais aos das demais obras.
+
+### Miranorte — `obra-iluminacao-miranorte.html`
+
+- [ ] `descricao-miranorte`
+- [ ] `orgao-contratante-miranorte` — provavelmente a Prefeitura, confirmar
+- [ ] `objeto-contrato-miranorte`
+- [ ] `modalidade-miranorte`
+- [ ] `pontos-miranorte`
+- [ ] `extensao-miranorte`
+- [ ] `prazo-miranorte`
+- [ ] `escopo-miranorte`
+- [ ] `situacao-miranorte`
+
+### Monte do Carmo — `obra-iluminacao-monte-do-carmo.html`
+
+- [ ] `descricao-monte-do-carmo`
+- [ ] `orgao-contratante-monte-do-carmo`
+- [ ] `objeto-contrato-monte-do-carmo`
+- [ ] `modalidade-monte-do-carmo`
+- [ ] `pontos-monte-do-carmo`
+- [ ] `extensao-monte-do-carmo`
+- [ ] `prazo-monte-do-carmo`
+- [ ] `escopo-monte-do-carmo`
+- [ ] `situacao-monte-do-carmo`
+
+### Nova Rosalândia — `obra-iluminacao-nova-rosalandia.html`
+
+- [ ] `descricao-nova-rosalandia`
+- [ ] `orgao-contratante-nova-rosalandia`
+- [ ] `objeto-contrato-nova-rosalandia`
+- [ ] `modalidade-nova-rosalandia`
+- [ ] `pontos-nova-rosalandia`
+- [ ] `extensao-nova-rosalandia`
+- [ ] `prazo-nova-rosalandia`
+- [ ] `escopo-nova-rosalandia`
+- [ ] `situacao-nova-rosalandia`
+
+---
+
+## 🟠 OUTRAS — `obra-ananas.html`
+
+Você confirmou que é obra real, mas ela **não estava na lista das 7** e não
+tem categoria. Por isso aparece num grupo "Outras Obras" na home, separado
+das três categorias técnicas.
+
+- [ ] `categoria-ananas` — **define em qual grupo ela entra.** Se for uma
+      das três categorias existentes, eu movo o card e o grupo "Outras
+      Obras" desaparece.
+- [ ] `descricao-ananas`
 - [ ] `orgao-contratante-ananas`
 - [ ] `objeto-contrato-ananas`
 - [ ] `modalidade-ananas`
 - [ ] `area-ananas`
 - [ ] `prazo-ananas`
 - [ ] `escopo-ananas`
-- [ ] `situacao-ananas` — concluída ou em andamento?
+- [ ] `situacao-ananas`
 
-### Obra em Andamento — `obra-em-andamento.html` *(página nova)*
-
-- [ ] `nome-obra-andamento` — **"Obra em Andamento" não é nome, é rótulo.**
-      Aparece assim no card da home e no `<h1>` da página.
-- [ ] `descricao-obra-andamento`
-- [ ] `orgao-contratante-andamento`
-- [ ] `objeto-contrato-andamento`
-- [ ] `modalidade-andamento`
-- [ ] `area-andamento`
-- [ ] `prazo-andamento`
-- [ ] `cidade-obra-andamento` — aparece **no card da home e na ficha**
-- [ ] `escopo-andamento`
+> **Nota:** a página `obra-em-andamento.html` foi removida na Fase 7. Era um
+> card genérico que não correspondia a nenhuma obra real da lista. Se existir
+> mesmo uma obra em execução hoje, ela precisa entrar como registro próprio.
 
 ---
 
 ## 📷 FOTOS — o item de maior retorno da lista
 
-O código referenciava `obraananas.png` e `fotoG.png`. **Esses arquivos nunca
-existiram no repositório** — conferido no histórico do Git. Os dois cards da
-home exibiam ícone de imagem quebrada para todo mundo que abriu o site.
+**Das 8 obras, apenas 2 têm foto** — os fóruns de Natividade e Goiatins. As
+outras 6 mostram um placeholder com o ícone da categoria: honesto, mas neutro.
 
-Hoje eles mostram um placeholder "Foto em breve", que é honesto, mas neutro.
+- [ ] **CEM Félix Camoa** — Porto Nacional / TO
+- [ ] **Escola Estadual Henrique Cirqueira Amori**
+- [ ] **Iluminação Pública de Miranorte**
+- [ ] **Iluminação Pública de Monte do Carmo**
+- [ ] **Iluminação Pública de Nova Rosalândia**
+- [ ] **Obra de Ananás**
 
-- [ ] **Foto da obra de Ananás**
-- [ ] **Foto da obra em andamento**
-
-> Se seu pai tiver qualquer foto dessas duas obras no celular, isso vale mais
-> do que o CNPJ. Foto de obra entregue é a prova visual que a comissão quer —
+> Se seu pai tiver qualquer foto dessas obras no celular, isso vale mais do
+> que o CNPJ. Foto de obra entregue é a prova visual que a comissão quer —
 > os dois fóruns que já estão no site funcionam justamente por isso.
+
+Para as três de iluminação pública, foto noturna da via iluminada é o que
+comprova o serviço. Foto de poste durante o dia não mostra resultado.
 
 **Como entregar:** JPG, na horizontal, mínimo 800×533. Coloque na pasta do
 projeto e me avise o nome do arquivo — eu troco o placeholder e ajusto o
-`og:image` das páginas (hoje elas emprestam a foto de Natividade e Goiatins
+`og:image` da página (hoje as 6 emprestam as fotos de Natividade e Goiatins
 para a prévia do WhatsApp não sair vazia).
 
 ---
