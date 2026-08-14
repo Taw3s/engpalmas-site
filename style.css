@@ -527,11 +527,13 @@ nav ul li a[aria-current="page"] {
     z-index: 2;
 }
 
+/* O padding das seções já cria respiro; 80px aqui somavam ~160px de vão
+   entre uma seção e a fita. */
 .divisor-fita-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 80px 5% 60px 5%;
+    margin: 40px 5% 30px 5%;
 }
 
 .fita-linha {
@@ -703,6 +705,12 @@ html.js .filtro-obras {
     display: none;
 }
 
+/* Região que anuncia a contagem após filtrar. Fica sempre invisível —
+   a classe existe para dar nome ao elemento no JS. */
+.status-filtro {
+    margin: 0;
+}
+
 /* --- Agrupamento por categoria ------------------------------------------- */
 
 .grupo-obras {
@@ -801,12 +809,22 @@ html.js .filtro-obras {
 }
 
 /* h4 porque agora existe o h3 do título da categoria acima. */
+/* A cor é declarada aqui, e não herdada do <a>, para que nenhum estado
+   do link (hover preso, visited, focus) possa tingir o título. O realce
+   de hover é aplicado explicitamente logo abaixo. */
 .obra-info h4 {
     font-size: 1.15rem;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     line-height: 1.25;
+    color: var(--white-text);
+    transition: color 0.3s ease;
+}
+
+.link-obra:hover .obra-info h4,
+.link-obra:focus-visible .obra-info h4 {
+    color: var(--orange-brand);
 }
 
 .obra-info .obra-local {
@@ -917,13 +935,48 @@ html.js .filtro-obras {
     color: var(--light-grey);
 }
 
+/* --- Alinhamento dos cards sem foto ---------------------------------------
+   Sem isto, a altura de .obra-info varia com o número de linhas do título
+   (1 linha no Félix Camoa, 2 nas de iluminação, 3 na Escola Henrique
+   Cirqueira) e o bloco do ícone, centrado no card inteiro, aparecia em
+   alturas diferentes em cada card. Aqui a faixa inferior passa a ter
+   altura fixa e o ícone se centra sempre na mesma área. */
+
+.portfolio-item.sem-foto .obra-sem-foto {
+    /* Reserva a faixa ocupada por .obra-info. */
+    padding-bottom: 124px;
+    justify-content: center;
+}
+
+.portfolio-item.sem-foto .obra-info {
+    min-height: 124px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Três linhas reservadas para o título, alinhado pela base: títulos de
+   1, 2 ou 3 linhas terminam todos na mesma altura. */
+.portfolio-item.sem-foto .obra-info h4 {
+    min-height: 3.75em;
+    display: flex;
+    align-items: flex-end;
+}
+
+/* O marcador de pendência tem borda e padding próprios e engordava a
+   linha do município só nesse card. */
+.portfolio-item.sem-foto .obra-local .pendente {
+    font-size: 0.72rem;
+    padding: 0 5px;
+}
+
 
 /* ==========================================================================
    11. ESPECIALIDADES
    ========================================================================== */
 
 .secao-especialidades {
-    padding: 80px 5%;
+    padding: 60px 5% 50px;
     background-color: transparent;
     text-align: center;
 }
@@ -1248,7 +1301,7 @@ html.js .filtro-obras {
    ========================================================================== */
 
 .secao-capacidade {
-    padding: 40px 5% 80px;
+    padding: 50px 5% 45px;
     text-align: center;
 }
 
