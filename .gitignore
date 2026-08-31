@@ -71,3 +71,22 @@ rascunho/
 # Os arquivos fase*.md são anotações internas de desenvolvimento e não
 # fazem parte do site publicado.
 fase*.md
+
+# Relatórios internos de auditoria e controle. Continuam na pasta local,
+# mas não voltam para o repositório público.
+AUDITORIA.md
+PENDENCIAS.md
+SEGURANCA.md
+
+# --- Cópias duplicadas do Windows -----------------------------------------
+# O Explorer cria "arquivo - Copia.ext" ao duplicar. Duas dessas cópias já
+# tinham sido versionadas por engano.
+* - Copia.*
+* - Copy.*
+*- Cópia.*
+
+# --- Imagens de rascunho não usadas no site -------------------------------
+# Continuam na pasta local, mas não fazem parte do site publicado e os nomes
+# não são adequados a um repositório público.
+prediosFODAS.png
+rasgaCarniça.png
