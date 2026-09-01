@@ -1,3 +1,5 @@
+Projeto em desenvolvimento. Os dados institucionais (CNPJ, CREA, métricas) estão pendentes de fornecimento pelo cliente.
+
 # EngPalmas — Site Institucional
 
 Site institucional da EngPalmas, empresa de engenharia civil e elétrica de Palmas (TO),
